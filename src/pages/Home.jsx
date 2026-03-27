@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Building2, BadgePercent } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AboutUs from '../components/AboutUs';
+import FeaturedProjects from '../components/FeaturedProjects';
+import OurCommitments from '../components/OurCommitments';
 
 const heroImages = [
   'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
   'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'
+
 ];
 
 const stats = [
@@ -29,27 +32,27 @@ const Home = () => {
 
   return (
     <div className="w-full bg-slate-50 relative overflow-hidden">
-      
+
       {/* 1. Dynamic Hero Section */}
       <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-slate-950">
         {heroImages.map((img, index) => (
           <motion.div
             key={img}
             initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ 
+            animate={{
               opacity: index === currentHero ? 0.6 : 0,
               scale: index === currentHero ? 1 : 1.05
             }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
           >
-            <div 
+            <div
               className="w-full h-full bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${img})` }}
             />
           </motion.div>
         ))}
-        
+
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-start justify-center text-white">
           <motion.div
@@ -62,21 +65,21 @@ const Home = () => {
               Building the Future
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-tight mb-8">
-              Excellence in <br/> Every Structure.
+              Excellence in <br /> Every Structure.
             </h1>
             <p className="text-slate-300 text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-10">
               We leverage decades of expertise, master craftsmanship, and innovative strategies to deliver premium commercial and residential developments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/portfolio" 
+              <Link
+                to="/portfolio"
                 className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center gap-2"
               >
                 Explore Portfolio
                 <ArrowRight size={18} />
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center"
               >
                 Our Story
@@ -86,7 +89,7 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -94,7 +97,7 @@ const Home = () => {
         >
           <span className="text-xs uppercase tracking-widest text-slate-300">Scroll</span>
           <div className="w-px h-16 bg-white/20 relative overflow-hidden">
-            <motion.div 
+            <motion.div
               animate={{ y: [0, 64] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
               className="absolute top-0 left-0 w-full h-1/2 bg-amber-500"
@@ -108,7 +111,7 @@ const Home = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x-0 md:divide-x divide-slate-800">
             {stats.map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -124,18 +127,41 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Our Commitments */}
+      <OurCommitments />
+
+      {/* Featured Projects */}
+      <FeaturedProjects />
+
       {/* 3. Social Proof Marquee (Trademarks/Logos) */}
       <section className="py-24 bg-white overflow-hidden flex flex-col justify-center">
         <div className="container mx-auto px-6 lg:px-12 mb-12 text-center">
-          <span className="text-sm font-semibold tracking-widest text-slate-400 uppercase">Trusted by Industry Leaders</span>
+          <span className="text-sm font-semibold tracking-widest text-amber-500 uppercase">Trusted by Industry Leaders</span>
         </div>
-        
+
         {/* Continuous scrolling row */}
-        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll">
-            {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((item, i) => (
-              <li key={i} className="text-slate-300 pointer-events-none">
-                <Building2 size={48} strokeWidth={1} className={i % 2 === 0 ? "text-slate-200" : "text-slate-300"} />
+        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
+          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll group-hover:[animation-play-state:paused]">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <li key={`logo-1-${i}`} className="pointer-events-auto cursor-pointer">
+                <img
+                  src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg"
+                  alt="Nesto Group"
+                  title="Nesto Group"
+                  className="h-8 md:h-10 w-auto brightness-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                />
+              </li>
+            ))}
+          </ul>
+          <ul aria-hidden="true" className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll group-hover:[animation-play-state:paused]">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <li key={`logo-2-${i}`} className="pointer-events-auto cursor-pointer">
+                <img
+                  src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg"
+                  alt="Nesto Group"
+                  title="Nesto Group"
+                  className="h-8 md:h-10 w-auto brightness-0 opacity-40 hover:opacity-100 transition-all duration-300"
+                />
               </li>
             ))}
           </ul>
@@ -156,8 +182,8 @@ const Home = () => {
               </p>
             </div>
             <div className="shrink-0 w-full md:w-auto mt-6 md:mt-0">
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="w-full md:w-auto bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-colors inline-block text-center"
               >
                 Learn More
@@ -166,7 +192,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Intro to Services / Philosophy (Optional buffer before footer) */}
       <section className="py-32 bg-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-12">
@@ -176,8 +202,8 @@ const Home = () => {
             <p className="text-slate-400 text-lg leading-relaxed mb-12">
               From initial groundwork to final finishing, our process is defined by meticulous attention to detail. We believe that true luxury lies in the foundation of trust we build with every client.
             </p>
-            <Link 
-              to="/portfolio" 
+            <Link
+              to="/portfolio"
               className="text-amber-500 hover:text-amber-400 text-sm font-medium tracking-widest uppercase transition-colors inline-flex items-center gap-2 pb-1 border-b border-amber-500 hover:border-amber-400"
             >
               View Our Capability

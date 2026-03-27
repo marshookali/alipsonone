@@ -9,8 +9,13 @@
   --color-amber-600: #d97706;
   --color-steel-blue: #4682b4;
   --color-charcoal: #36454F;
+  
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
 }
-
 @layer base {
   body {
     @apply font-sans bg-slate-50 text-slate-900 antialiased;
