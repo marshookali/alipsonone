@@ -133,35 +133,24 @@ const Home = () => {
       {/* Featured Projects */}
       <FeaturedProjects />
 
-      {/* 3. Social Proof Marquee (Trademarks/Logos) */}
-      <section className="py-24 bg-white overflow-hidden flex flex-col justify-center">
+      {/* 3. Partner Marquee (Nesto Logo) */}
+      <section className="py-24 bg-white overflow-hidden flex flex-col justify-center border-b border-slate-100">
         <div className="container mx-auto px-6 lg:px-12 mb-12 text-center">
-          <span className="text-sm font-semibold tracking-widest text-amber-500 uppercase">Trusted by Industry Leaders</span>
+          <span className="text-sm font-semibold tracking-widest text-amber-500 uppercase block">Trusted By</span>
         </div>
 
-        {/* Continuous scrolling row */}
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll group-hover:[animation-play-state:paused]">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <li key={`logo-1-${i}`} className="pointer-events-auto cursor-pointer">
-                <img
-                  src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg"
-                  alt="Nesto Group"
-                  title="Nesto Group"
-                  className="h-8 md:h-10 w-auto brightness-0 opacity-60 hover:opacity-100 transition-all duration-300"
-                />
+          <ul className="flex items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <li key={`logo-1-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300">
+                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-12 md:h-14 w-32 md:w-40 object-contain invert" />
               </li>
             ))}
           </ul>
-          <ul aria-hidden="true" className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll group-hover:[animation-play-state:paused]">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <li key={`logo-2-${i}`} className="pointer-events-auto cursor-pointer">
-                <img
-                  src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg"
-                  alt="Nesto Group"
-                  title="Nesto Group"
-                  className="h-8 md:h-10 w-auto brightness-0 opacity-40 hover:opacity-100 transition-all duration-300"
-                />
+          <ul aria-hidden="true" className="flex items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <li key={`logo-2-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300">
+                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-12 md:h-14 w-32 md:w-40 object-contain invert" />
               </li>
             ))}
           </ul>

@@ -6,7 +6,7 @@ const OurCommitments = () => {
     {
       title: "Safety",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
           <path d="M24 8c-8.8 0-16 7-16 16v2h32v-2c0-9-7.2-16-16-16z" />
           <path d="M4 26h40v4H4z" />
           <path d="M24 8v10" />
@@ -22,7 +22,7 @@ const OurCommitments = () => {
     {
       title: "Quality",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
           <rect x="10" y="16" width="22" height="22" rx="2" />
           <path d="M16 27l5 5 17-17" strokeWidth="2" />
           <path d="M16 22h-6" />
@@ -33,7 +33,7 @@ const OurCommitments = () => {
     {
       title: "Sustainability",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
           <path d="M24 42v-22" />
           <path d="M24 32c-6 0-10-4-10-10 0 6 4 10 10 10z" />
           <path d="M24 24c5 0 9-3 9-9 0 4-4 9-9 9z" />
@@ -46,7 +46,7 @@ const OurCommitments = () => {
     {
       title: "Stewardship",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
           <path d="M9 25l8 11 16-16-6-6" />
           <path d="M22 18l6 6" />
           <path d="M39 25l-8 11-16-16 6-6" />
@@ -97,7 +97,7 @@ const OurCommitments = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex flex-col group items-start h-full"
             >
-              <div className="mb-6 h-[50px] flex items-center justify-start text-[#1a1a1a]">
+              <div className="mb-6 h-[50px] flex items-center justify-start text-[#1a1a1a] group-hover:text-amber-500 transition-colors duration-300">
                 {card.icon}
               </div>
               <h3 className="text-[20px] font-bold text-[#1a1a1a] font-sans mb-4">

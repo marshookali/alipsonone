@@ -32,91 +32,94 @@ const Navbar = () => {
 
   const isHome = location.pathname === '/';
   // On home page, we want it transparent at top. On other pages, maybe solid.
+  // Using z-[60] so the header and toggle stay above the mobile menu slide-out
   const navbarClasses = cn(
-    'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4',
-    isScrolled || !isHome ? 'bg-slate-900/95 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
+    'fixed top-0 left-0 right-0 z-[60] transition-all duration-300 py-4',
+    isScrolled || !isHome || mobileMenuOpen ? 'bg-slate-950/95 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
   );
 
   const textClasses = cn(
     'transition-colors font-medium',
-    isScrolled || !isHome ? 'text-slate-50' : 'text-slate-50' // Assuming dark hero backgrounds
+    'text-slate-50'
   );
 
   return (
-    <header className={navbarClasses}>
-      <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-        <Link to="/" className={cn("text-2xl font-serif tracking-tight font-bold z-50", textClasses)}>
-          ALIPSON<span className="text-amber-500"></span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link 
-                  to={link.path}
-                  className={cn(
-                    "text-sm uppercase tracking-widest hover:text-amber-500 transition-colors",
-                    textClasses
-                  )}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link 
-            to="/contact" 
-            className="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-sm text-sm font-medium uppercase tracking-wider transition-colors"
-          >
-            Request a Quote
+    <>
+      <header className={navbarClasses}>
+        <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+          <Link to="/" className={cn("text-2xl font-serif tracking-tight font-bold", textClasses)}>
+            ALIPSON<span className="text-amber-500"></span>
           </Link>
-        </nav>
 
-        {/* Mobile Toggle */}
-        <button 
-          className={cn("md:hidden p-2 z-50", textClasses)} 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            <ul className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.path}
+                    className={cn(
+                      "text-sm uppercase tracking-widest hover:text-amber-500 transition-colors",
+                      textClasses
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link 
+              to="/contact" 
+              className="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-sm text-sm font-medium uppercase tracking-wider transition-colors"
+            >
+              Request a Quote
+            </Link>
+          </nav>
 
-        {/* Mobile Nav */}
-        <div className={cn(
-          "fixed inset-0 bg-slate-900 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}>
-          <ul className="flex flex-col items-center gap-6">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link 
-                  to={link.path}
-                  className="text-white text-2xl font-serif hover:text-amber-500 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-            <li>
+          {/* Mobile Toggle */}
+          <button 
+            className={cn("md:hidden p-2 z-[60]", textClasses)} 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Nav - Extracted outside <header> to bypass CSS containing block issues caused by backdrop-blur */}
+      <div className={cn(
+        "fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden",
+        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+      )}>
+        <ul className="flex flex-col items-center gap-6">
+          {navLinks.map((link) => (
+            <li key={`mobile-${link.name}`}>
               <Link 
-                to="/contact"
+                to={link.path}
                 className="text-white text-2xl font-serif hover:text-amber-500 transition-colors"
               >
-                Contact
+                {link.name}
               </Link>
             </li>
-          </ul>
-          <Link 
-            to="/contact" 
-            className="mt-4 bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-sm text-lg font-medium tracking-wider transition-colors"
-          >
-            Request a Quote
-          </Link>
-        </div>
+          ))}
+          <li>
+            <Link 
+              to="/contact"
+              className="text-white text-2xl font-serif hover:text-amber-500 transition-colors"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+        <Link 
+          to="/contact" 
+          className="mt-4 bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-sm text-lg font-medium tracking-wider transition-colors"
+        >
+          Request a Quote
+        </Link>
       </div>
-    </header>
+    </>
   );
 };
 

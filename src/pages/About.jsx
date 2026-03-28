@@ -17,14 +17,28 @@ const team = [
 
 const About = () => {
   return (
-    <div className="pt-24 min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 overflow-hidden">
       
       {/* Hero Section */}
-      <section className="container mx-auto px-6 lg:px-12 mb-20 text-center max-w-4xl">
-        <h1 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-medium">Our Story</h1>
-        <p className="text-lg text-slate-600 font-sans leading-relaxed">
-          For over 25 years, AlipsonOne has redefined the construction landscape through an unwavering commitment to quality, transparent practices, and deep-rooted industry partnerships.
-        </p>
+      <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Static Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-slate-950/70 z-0"></div>
+        <div className="relative z-10 container mx-auto px-6 lg:px-12 text-center max-w-4xl pt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 font-medium tracking-tight">Our Story</h1>
+            <p className="text-lg md:text-xl text-slate-300 font-sans leading-relaxed">
+              For over 25 years, AlipsonOne has redefined the construction landscape through an unwavering commitment to quality, transparent practices, and deep-rooted industry partnerships.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Visual Storytelling Timeline */}
