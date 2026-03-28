@@ -140,17 +140,17 @@ const Home = () => {
         </div>
 
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
-          <ul className="flex items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+          <ul className="flex w-max shrink-0 items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
             {Array.from({ length: 8 }).map((_, i) => (
               <li key={`logo-1-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300">
-                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-12 md:h-14 w-32 md:w-40 object-contain invert" />
+                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-10 md:h-12 w-auto max-w-none object-contain invert" />
               </li>
             ))}
           </ul>
-          <ul aria-hidden="true" className="flex items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+          <ul aria-hidden="true" className="flex w-max shrink-0 items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
             {Array.from({ length: 8 }).map((_, i) => (
               <li key={`logo-2-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300">
-                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-12 md:h-14 w-32 md:w-40 object-contain invert" />
+                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-10 md:h-12 w-auto max-w-none object-contain invert" />
               </li>
             ))}
           </ul>
