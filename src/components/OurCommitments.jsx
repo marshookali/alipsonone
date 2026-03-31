@@ -68,8 +68,8 @@ const OurCommitments = () => {
           {/* Left Column (60%) */}
           <div className="w-full md:w-[60%] flex flex-col items-start gap-8">
             <div className="flex items-center gap-4">
-              <div className="w-[40px] h-[1.5px] bg-[#1a1a1a]"></div>
-              <span className="text-[12px] tracking-[2px] text-[#4a4a4a] uppercase font-bold font-sans">
+              <div className="w-[40px] h-[1.5px] bg-amber-600"></div>
+              <span className="text-[12px] tracking-[2px] text-amber-600 uppercase font-bold font-sans">
                 Our Commitments
               </span>
             </div>
@@ -107,9 +107,9 @@ const OurCommitments = () => {
                 {card.text}
               </p>
               
-              <a href="#" className="flex items-center gap-3 text-[11px] tracking-[1.5px] text-[#2d5a3d] font-bold uppercase transition-colors mt-auto group-hover:opacity-80">
+              <a href="#" className="flex items-center gap-3 text-[11px] tracking-[1.5px] text-amber-600 font-bold uppercase transition-colors mt-auto group-hover:opacity-80">
                 Read More
-                <span className="w-[40px] h-[1.5px] bg-[#2d5a3d] transition-all duration-300 group-hover:w-[60px]"></span>
+                <span className="w-[40px] h-[1.5px] bg-amber-600 transition-all duration-300 group-hover:w-[60px]"></span>
               </a>
             </motion.div>
           ))}

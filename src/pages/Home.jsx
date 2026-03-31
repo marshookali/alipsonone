@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Building2, BadgePercent } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -16,9 +17,16 @@ const stats = [
 const Home = () => {
   return (
     <div className="w-full bg-slate-50 relative overflow-hidden">
+      <Helmet>
+        <title>AlipsonOne Construction | Premium Commercial & Residential Builder in New York</title>
+        <meta name="description" content="AlipsonOne is a top-rated construction company specializing in premium commercial and residential developments. Over 25 years of excellence, $500M+ projects completed. Request a quote today." />
+        <meta property="og:title" content="AlipsonOne Construction | Premium Builder in New York" />
+        <meta property="og:description" content="Over 25 years of excellence in commercial and residential construction. Top 100 ENR Contractor." />
+        <link rel="canonical" href="https://alipsonone.com/" />
+      </Helmet>
 
       {/* 1. Dynamic Hero Section */}
-      <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-slate-950">
+      <header className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-slate-950">
 
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full">
@@ -54,14 +62,14 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/portfolio"
-                className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center gap-2"
+                className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-sm text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center gap-2"
               >
                 Explore Portfolio
                 <ArrowRight size={18} />
               </Link>
               <Link
                 to="/about"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center"
+                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-sm text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center"
               >
                 Our Story
               </Link>
@@ -85,7 +93,7 @@ const Home = () => {
             />
           </div>
         </motion.div>
-      </section>
+      </header>
 
       {/* 2. Concrete Proof Banner (Stats) */}
       <section className="bg-slate-900 text-white py-16 border-t-[6px] border-amber-600 relative z-20 -mt-2">

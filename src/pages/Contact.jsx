@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Star, Quote } from 'lucide-react';
 
@@ -40,6 +41,13 @@ const Contact = () => {
 
   return (
     <div className="pt-24 pb-24 min-h-screen bg-slate-50 relative">
+      <Helmet>
+        <title>Request a Quote | AlipsonOne Construction - Contact Us</title>
+        <meta name="description" content="Request a free construction quote from AlipsonOne. Our project managers will review your requirements and coordinate a comprehensive consultation. Serving New York and beyond." />
+        <meta property="og:title" content="Request a Quote | AlipsonOne Construction" />
+        <meta property="og:description" content="Get a free consultation for your next commercial or residential construction project." />
+        <link rel="canonical" href="https://alipsonone.com/contact" />
+      </Helmet>
       
       {/* Background purely for aesthetic split */}
       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[600px] lg:h-full bg-slate-900 -z-10 hidden lg:block" />

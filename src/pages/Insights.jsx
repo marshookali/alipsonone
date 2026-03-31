@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, User } from 'lucide-react';
 
@@ -67,6 +68,13 @@ const articles = [
 const Insights = () => {
   return (
     <div className="pt-24 pb-24 min-h-screen bg-white">
+      <Helmet>
+        <title>Industry Insights | AlipsonOne Construction - Thought Leadership</title>
+        <meta name="description" content="Executive-level perspectives on construction methodology, sustainability standards, supply chain logistics, and project management from AlipsonOne's industry experts." />
+        <meta property="og:title" content="Industry Insights | AlipsonOne Construction" />
+        <meta property="og:description" content="Thought leadership on construction innovation, sustainability, and market trends." />
+        <link rel="canonical" href="https://alipsonone.com/insights" />
+      </Helmet>
       
       {/* Header */}
       <section className="container mx-auto px-6 lg:px-12 mb-16 text-center">
@@ -88,11 +96,14 @@ const Insights = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group flex flex-col cursor-pointer"
+              role="article"
             >
               {/* Thumbnail */}
               <div className="relative w-full aspect-[16/10] overflow-hidden rounded-sm mb-6 bg-slate-100">
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-105"
+                  role="img"
+                  aria-label={article.title}
                   style={{ backgroundImage: `url(${article.image})` }}
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-slate-900 rounded-sm shadow-sm">

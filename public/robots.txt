@@ -1,0 +1,9 @@
+# AlipsonOne Construction - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alipsonone.com/sitemap.xml
+
+# Disallow admin or private paths (if any)
+Disallow: /api/

@@ -51,12 +51,14 @@ const Footer = () => {
           {/* Quick Links & Hours */}
           <div className="space-y-6">
             <h3 className="text-white font-serif text-lg tracking-wide">Quick Links</h3>
+            <nav aria-label="Footer navigation">
             <ul className="space-y-3 text-sm flex-col flex">
               <Link to="/portfolio" className="hover:text-amber-500 transition-colors inline-block w-fit">Our Portfolio</Link>
               <Link to="/about" className="hover:text-amber-500 transition-colors inline-block w-fit">Company Story</Link>
               <Link to="/insights" className="hover:text-amber-500 transition-colors inline-block w-fit">Industry Insights</Link>
               <Link to="/contact" className="hover:text-amber-500 transition-colors inline-block w-fit">Request a Quote</Link>
             </ul>
+            </nav>
             <div className="pt-4 space-y-3 text-sm border-t border-slate-800">
               <div className="flex items-start gap-3">
                 <Clock size={18} className="text-amber-500 shrink-0" />

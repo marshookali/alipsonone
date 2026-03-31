@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Users, Truck, Wrench, Shield } from 'lucide-react';
 
@@ -18,12 +19,21 @@ const team = [
 const About = () => {
   return (
     <div className="min-h-screen bg-slate-50 overflow-hidden">
+      <Helmet>
+        <title>About Us | AlipsonOne Construction - Our Story & Heritage</title>
+        <meta name="description" content="Learn about AlipsonOne's 25+ year legacy in premium construction. Meet our leadership team, explore our heritage timeline, and discover our strategic partnerships." />
+        <meta property="og:title" content="About Us | AlipsonOne Construction" />
+        <meta property="og:description" content="25+ years of construction excellence. Meet the visionaries behind AlipsonOne's landmark builds." />
+        <link rel="canonical" href="https://alipsonone.com/about" />
+      </Helmet>
       
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <header className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Static Background */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
+          role="img"
+          aria-label="Aerial view of a modern construction site"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" }}
         />
         <div className="absolute inset-0 bg-slate-950/70 z-0"></div>
@@ -39,7 +49,7 @@ const About = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </header>
 
       {/* Visual Storytelling Timeline */}
       <section className="bg-white py-24 border-y border-slate-200">
@@ -95,7 +105,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="group text-left"
               >
-                <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm mb-6">
+                <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm mb-6" role="img" aria-label={`Portrait of ${member.name}, ${member.role}`}>
                   <div 
                     className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-105"
                     style={{ backgroundImage: `url(${member.image})` }}

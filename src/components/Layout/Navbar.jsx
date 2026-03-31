@@ -52,7 +52,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -80,7 +80,8 @@ const Navbar = () => {
           <button 
             className={cn("md:hidden p-2 z-[60]", textClasses)} 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

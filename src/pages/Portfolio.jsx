@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, Building, Home as HomeIcon, Factory } from 'lucide-react';
 
@@ -96,6 +97,13 @@ const Portfolio = () => {
 
   return (
     <div className="pt-24 pb-24 min-h-screen bg-slate-50">
+      <Helmet>
+        <title>Portfolio | AlipsonOne Construction - Our Landmark Projects</title>
+        <meta name="description" content="Explore AlipsonOne's portfolio of landmark construction projects including commercial towers, luxury residences, and industrial facilities. $500M+ in completed developments." />
+        <meta property="og:title" content="Portfolio | AlipsonOne Construction" />
+        <meta property="og:description" content="View our landmark achievements in commercial, residential, and industrial construction." />
+        <link rel="canonical" href="https://alipsonone.com/portfolio" />
+      </Helmet>
       
       {/* Header & Filters */}
       <section className="container mx-auto px-6 lg:px-12 mb-16">
@@ -146,6 +154,8 @@ const Portfolio = () => {
                 {/* Background Image */}
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  role="img"
+                  aria-label={`${project.title} - ${project.category} project`}
                   style={{ backgroundImage: `url(${project.image})` }}
                 />
                 

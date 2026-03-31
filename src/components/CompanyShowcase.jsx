@@ -11,27 +11,27 @@ const CompanyShowcase = () => {
 
   const howWeBuildTabs = [
     {
-      title: "Operations Playbook",
-      desc: "A reliable set of standards that we've refined over decades of building that informs our approach on every project across the country.",
-      img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop",
+      title: "Project Planning",
+      desc: "From blueprints to timelines, our meticulous planning process ensures every project is delivered on time, within budget, and to the highest quality standards.",
+      img: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1000",
       linkText: "LEARN MORE"
     },
     {
-      title: "Proven Technologies",
-      desc: "Digital solutions, tested and scaled on jobsites, that boost efficiency and safety while maintaining our high standards.",
-      img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop",
+      title: "Structural Engineering",
+      desc: "Our expert engineers design and reinforce foundations, frameworks, and load-bearing structures that stand the test of time with uncompromising safety.",
+      img: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1000",
       linkText: "LEARN MORE"
     },
     {
-      title: "Data & AI",
-      desc: "Leveraging predictive models and project data to mitigate risk, optimize schedules, and enhance decision-making in real-time.",
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+      title: "Site Management",
+      desc: "Real-time coordination of crews, materials, and equipment on-site, ensuring seamless execution from groundbreaking to final inspection.",
+      img: "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000",
       linkText: "LEARN MORE"
     },
     {
-      title: "Advanced Expertise",
-      desc: "Our specialized teams bring deep sector knowledge to complex builds, ensuring innovative solutions from preconstruction to closeout.",
-      img: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1000&auto=format&fit=crop",
+      title: "Quality Assurance",
+      desc: "Rigorous inspection protocols and compliance checks at every stage guarantee that our builds exceed industry standards and client expectations.",
+      img: "https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1000",
       linkText: "LEARN MORE"
     }
   ];
@@ -61,7 +61,7 @@ const CompanyShowcase = () => {
   ];
 
   return (
-    <div className="w-full bg-[#f4f5f6]">
+    <div className="w-full bg-white">
       
       {/* 1. At A Glance (Bento Box Grid) */}
       <section className="container mx-auto px-6 lg:px-12 py-24">
@@ -69,14 +69,14 @@ const CompanyShowcase = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-slate-300">
           
           {/* Box 1: Title (Spans 2 columns on lg) */}
-          <div className="lg:col-span-2 border-r border-b border-slate-300 p-8 md:p-12 flex items-center bg-[#f4f5f6]">
+          <div className="lg:col-span-2 border-r border-b border-slate-300 p-8 md:p-12 flex items-center bg-white">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-sans text-slate-900 leading-tight tracking-tight">
               Our company <br /> at a glance
             </h2>
           </div>
 
           {/* Box 2: 16 Locations */}
-          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-[#f4f5f6] h-64 md:h-auto min-h-[300px]">
+          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-white h-64 md:h-auto min-h-[300px]">
             <span className="text-6xl md:text-7xl font-sans text-slate-900 tracking-tight">16</span>
             <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mt-auto">
               <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
@@ -88,13 +88,14 @@ const CompanyShowcase = () => {
           <div className="col-span-1 border-r border-b border-slate-300 relative bg-white overflow-hidden h-64 md:h-auto min-h-[300px] group">
             <img 
               src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" 
-              alt="Engineering" 
+              alt="Construction engineer reviewing project plans on site" 
+              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
 
           {/* Box 4: $10B Revenue */}
-          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-[#f4f5f6] h-64 md:h-auto min-h-[300px]">
+          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-white h-64 md:h-auto min-h-[300px]">
             <span className="text-6xl md:text-7xl font-sans text-slate-900 tracking-tight">$10B</span>
             <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mt-auto">
               <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
@@ -105,23 +106,24 @@ const CompanyShowcase = () => {
           {/* Box 5: Image (Rebar) */}
           <div className="col-span-1 border-r border-b border-slate-300 relative bg-white overflow-hidden h-64 md:h-auto min-h-[300px] group">
             <img 
-              src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?q=80&w=800&auto=format&fit=crop" 
-              alt="Construction Rebar" 
+              src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1000" 
+              alt="Modern construction building with glass and steel facade" 
+              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
 
           {/* Box 6: Badge Area */}
-          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-[#f4f5f6] h-64 md:h-auto min-h-[300px]">
-            <div className="w-full flex justify-center">
+          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-white h-64 md:h-auto min-h-[300px]">
+            <div className="w-full h-full flex items-center justify-center -mt-4">
               {/* Dummy badge made of CSS for the "Great Place to Work" */}
-              <div className="w-32 h-40 bg-slate-900 flex flex-col items-center justify-center text-center p-4">
-                <span className="text-white font-bold text-lg leading-tight mb-2">Great <br/> Place <br/> To <br/> Work</span>
-                <span className="text-blue-200 text-xs">Certified</span>
-                <span className="text-blue-200 text-[8px] mt-1">JUL 2025-JUL 2026</span>
+              <div className="w-36 h-44 bg-[#0B132B] flex flex-col items-center justify-center text-center p-4">
+                <span className="text-white font-bold text-xl leading-snug mb-3">Great <br/> Place <br/> To <br/> Work</span>
+                <span className="text-blue-100 text-sm opacity-90">Certified</span>
+                <span className="text-blue-100/70 text-[9px] mt-1.5 uppercase letter-spacing-widest">Jul 2025-Jul 2026</span>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mt-auto">
+            <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700">
               <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
               Great Place To Work
             </div>
@@ -130,8 +132,9 @@ const CompanyShowcase = () => {
           {/* Box 7: Image (Worker looking) */}
           <div className="col-span-1 border-r border-b border-slate-300 relative bg-white overflow-hidden h-64 md:h-auto min-h-[300px] group">
             <img 
-              src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=800&auto=format&fit=crop" 
-              alt="Construction Worker" 
+              src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000" 
+              alt="Construction workers collaborating on building site" 
+              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
@@ -140,89 +143,95 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 2. How We Build (Tabbed Component) */}
-      <section className="bg-[#e9ecef] py-24 border-t border-slate-200">
+      <section className="bg-white py-24">
         <div className="container mx-auto px-6 lg:px-12">
           
-          <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mb-6">
-            <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
-            The System
-          </div>
-          <h2 className="text-4xl md:text-5xl font-sans text-slate-900 mb-16 tracking-tight">How we build</h2>
+          {/* Card Container */}
+          <div className="bg-[#e9ecef] rounded-2xl p-8 md:p-12 lg:p-16">
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-            
-            {/* Left Nav */}
-            <div className="lg:col-span-3 flex flex-col gap-0 border-b border-slate-300">
-              {howWeBuildTabs.map((tab, idx) => {
-                const isActive = activeHowWeBuild === idx;
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveHowWeBuild(idx)}
-                    onMouseEnter={() => setActiveHowWeBuild(idx)}
-                    className={`relative text-left py-4 px-4 flex items-center gap-3 border-t border-slate-300 transition-all duration-300 ${
-                      isActive ? "bg-slate-200/50" : "hover:bg-slate-200/30"
-                    }`}
-                  >
-                    {/* Active Navy Border Indicator */}
-                    {isActive && (
-                      <motion.div 
-                        layoutId="activeTabIndicator" 
-                        className="absolute left-0 top-0 bottom-0 w-1 bg-slate-900"
-                      />
-                    )}
-                    {isActive && (
-                      <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
-                    )}
-                    <span className={`font-sans tracking-wide transition-colors ${isActive ? 'text-slate-900 font-medium' : 'text-slate-500'}`}>
-                      {tab.title}
-                    </span>
-                  </button>
-                );
-              })}
-              <div className="py-8">
-                <Link to="/about" className="uppercase text-xs font-semibold tracking-wider text-slate-900 flex items-center gap-2 group">
-                  View The System <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
+            <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mb-4">
+              <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
+              The System
             </div>
+            <h2 className="text-4xl md:text-5xl font-sans text-slate-900 mb-14 tracking-tight">How we build</h2>
 
-            {/* Middle Image w/ Crossfade */}
-            <div className="lg:col-span-6 relative h-[400px] md:h-[500px] bg-slate-200 overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeHowWeBuild}
-                  src={howWeBuildTabs[activeHowWeBuild].img}
-                  alt={howWeBuildTabs[activeHowWeBuild].title}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </AnimatePresence>
-            </div>
-
-            {/* Right Desc */}
-            <div className="lg:col-span-3 flex flex-col justify-end h-full lg:h-[500px] pb-4">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeHowWeBuild}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <p className="text-sm text-slate-700 leading-relaxed mb-6 font-sans">
-                    {howWeBuildTabs[activeHowWeBuild].desc}
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+              
+              {/* Left Nav */}
+              <div className="lg:col-span-3 flex flex-col gap-0 border-b border-slate-200">
+                {howWeBuildTabs.map((tab, idx) => {
+                  const isActive = activeHowWeBuild === idx;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveHowWeBuild(idx)}
+                      onMouseEnter={() => setActiveHowWeBuild(idx)}
+                      className={`relative text-left py-4 px-4 flex items-center gap-3 border-t border-slate-200 transition-all duration-300 ${
+                        isActive ? "bg-slate-50" : "hover:bg-slate-50/50"
+                      }`}
+                    >
+                      {/* Active Navy Border Indicator */}
+                      {isActive && (
+                        <motion.div 
+                          layoutId="activeTabIndicator" 
+                          className="absolute left-0 top-0 bottom-0 w-1 bg-slate-900"
+                        />
+                      )}
+                      {isActive && (
+                        <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
+                      )}
+                      <span className={`font-sans text-lg tracking-wide transition-colors ${isActive ? 'text-slate-900 font-medium' : 'text-slate-400'}`}>
+                        {tab.title}
+                      </span>
+                    </button>
+                  );
+                })}
+                <div className="py-8">
                   <Link to="/about" className="uppercase text-xs font-semibold tracking-wider text-slate-900 flex items-center gap-2 group">
-                    {howWeBuildTabs[activeHowWeBuild].linkText} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                    View The System <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </Link>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                </div>
+              </div>
 
+              {/* Middle Image w/ Crossfade */}
+              <div className="lg:col-span-5 flex items-center justify-center py-4">
+                <div className="relative w-full max-w-[420px] aspect-square rounded-xl overflow-hidden bg-slate-100">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={activeHowWeBuild}
+                      src={howWeBuildTabs[activeHowWeBuild].img}
+                      alt={howWeBuildTabs[activeHowWeBuild].title}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </AnimatePresence>
+                </div>
+              </div>
+
+              {/* Right Desc */}
+              <div className="lg:col-span-4 flex flex-col justify-end h-full lg:min-h-[420px] pb-4">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeHowWeBuild}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <p className="text-sm text-slate-600 leading-relaxed mb-6 font-sans">
+                      {howWeBuildTabs[activeHowWeBuild].desc}
+                    </p>
+                    <Link to="/about" className="uppercase text-xs font-semibold tracking-wider text-slate-900 flex items-center gap-2 group">
+                      {howWeBuildTabs[activeHowWeBuild].linkText} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
