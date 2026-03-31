@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AboutUs from '../components/AboutUs';
 import FeaturedProjects from '../components/FeaturedProjects';
 import OurCommitments from '../components/OurCommitments';
+import CompanyShowcase from '../components/CompanyShowcase';
 
 const stats = [
   { value: "$500M+", label: "Projects Completed" },
@@ -18,15 +19,16 @@ const Home = () => {
 
       {/* 1. Dynamic Hero Section */}
       <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-slate-950">
-        
+
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 bg-slate-900/50 z-10" />
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover"
           >
             <source src="https://www.weitz.com/wp-content/uploads/2025/12/Weitz-August00831767_2.mp4" type="video/mp4" />
           </video>
@@ -108,6 +110,9 @@ const Home = () => {
 
       {/* Our Commitments */}
       <OurCommitments />
+
+      {/* Company Showcase (At a Glance, How We Build, What We Build) */}
+      <CompanyShowcase />
 
       {/* Featured Projects */}
       <FeaturedProjects />

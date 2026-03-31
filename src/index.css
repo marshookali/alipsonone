@@ -9,23 +9,43 @@
   --color-amber-600: #d97706;
   --color-steel-blue: #4682b4;
   --color-charcoal: #36454F;
-  
+
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+
   @keyframes infinite-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
   }
 }
+
 @layer base {
   body {
     @apply font-sans bg-slate-50 text-slate-900 antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif tracking-tight text-slate-900;
   }
-  
+
   /* Make sure images are responsive and block by default */
-  img, svg, video, canvas, audio, iframe, embed, object {
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
     display: block;
     max-width: 100%;
   }
