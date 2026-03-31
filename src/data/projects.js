@@ -46,5 +46,53 @@ export const projectsData = [
       "https://images.unsplash.com/photo-1430285561322-7808604715df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
       "https://images.unsplash.com/photo-1574512484055-66270df3fbba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
     ]
+  },
+  {
+    id: "healthcare-center",
+    title: "Aurora Healthcare Center",
+    category: "Healthcare",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    description: "A state-of-the-art regional medical facility designed with patient wellness in mind. Incorporates natural light, advanced surgical suites, and LEED Gold certification.",
+    client: "Aurora Regional Health",
+    location: "Westside District",
+    year: "2023",
+    area: "320,000 sq ft",
+    services: ["Preconstruction", "General Contracting", "Healthcare Compliance"],
+    gallery: [
+      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    ]
+  },
+  {
+    id: "eco-hub-office",
+    title: "Eco-Hub Office Park",
+    category: "Commercial",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    description: "A mixed-use commercial development focusing on environmental sustainability. Features mass timber construction, solar array roofing, and native plant landscaping.",
+    client: "Verdant Properties",
+    location: "River North",
+    year: "2024",
+    area: "180,000 sq ft",
+    services: ["Design-Build", "Mass Timber Construction"],
+    gallery: [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    ]
+  },
+  {
+    id: "oceanview-resort",
+    title: "Oceanview Resort & Spa",
+    category: "Hospitality",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    description: "A luxury 5-star resort boasting beachfront villas, an infinity pool complex, and world-class dining facilities. Designed to withstand coastal weather while preserving the natural landscape.",
+    client: "Blue Horizon Hospitality",
+    location: "Coastal Highway 1",
+    year: "2022",
+    area: "400,000 sq ft",
+    services: ["General Contracting", "Site Development"],
+    gallery: [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    ]
   }
 ];

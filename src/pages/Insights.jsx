@@ -19,7 +19,7 @@ const articles = [
     date: 'February 28, 2026',
     author: 'Sarah Jenkins',
     readingTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c508b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     summary: 'Strategic frameworks for securing high-end finishes and structural components amidst ongoing global logistical constraints.'
   },
   {
@@ -49,7 +49,7 @@ const articles = [
     date: 'November 22, 2025',
     author: 'Robert Alipson',
     readingTime: '9 min read',
-    image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     summary: 'A look into the rigorous three-phase pre-construction audit utilized by Top 100 ENR firms to ensure project viability.'
   },
   {

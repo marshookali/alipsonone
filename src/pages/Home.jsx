@@ -1,16 +1,9 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Building2, BadgePercent } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AboutUs from '../components/AboutUs';
 import FeaturedProjects from '../components/FeaturedProjects';
 import OurCommitments from '../components/OurCommitments';
-
-const heroImages = [
-  'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-  'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80',
-
-];
 
 const stats = [
   { value: "$500M+", label: "Projects Completed" },
@@ -20,38 +13,24 @@ const stats = [
 ];
 
 const Home = () => {
-  const [currentHero, setCurrentHero] = useState(0);
-
-  // Auto crossfade hero images
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentHero((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="w-full bg-slate-50 relative overflow-hidden">
 
       {/* 1. Dynamic Hero Section */}
       <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-slate-950">
-        {heroImages.map((img, index) => (
-          <motion.div
-            key={img}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{
-              opacity: index === currentHero ? 0.6 : 0,
-              scale: index === currentHero ? 1 : 1.05
-            }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
+        
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-60"
           >
-            <div
-              className="w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${img})` }}
-            />
-          </motion.div>
-        ))}
+            <source src="https://www.weitz.com/wp-content/uploads/2025/12/Weitz-August00831767_2.mp4" type="video/mp4" />
+          </video>
+        </div>
 
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-start justify-center text-white">

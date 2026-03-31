@@ -60,7 +60,7 @@ const OurCommitments = () => {
   ];
 
   return (
-    <section className="bg-[#f7f7f7] py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-white py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         
         {/* Top Section */}
