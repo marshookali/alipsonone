@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, Building2, BadgePercent } from 'lucide-react';
+import { ArrowRight, ShieldCheck, BadgePercent, ArrowDownRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AboutUs from '../components/AboutUs';
 import FeaturedProjects from '../components/FeaturedProjects';
@@ -16,21 +16,98 @@ const stats = [
 
 const Home = () => {
   return (
-    <div className="w-full bg-slate-50 relative overflow-hidden">
+    <div className="w-full bg-alabaster relative overflow-hidden font-body text-ink">
       <Helmet>
         <title>AlipsonOne Construction | Premium Commercial & Residential Builder in New York</title>
         <meta name="description" content="AlipsonOne is a top-rated construction company specializing in premium commercial and residential developments. Over 25 years of excellence, $500M+ projects completed. Request a quote today." />
-        <meta property="og:title" content="AlipsonOne Construction | Premium Builder in New York" />
-        <meta property="og:description" content="Over 25 years of excellence in commercial and residential construction. Top 100 ENR Contractor." />
-        <link rel="canonical" href="https://alipsonone.com/" />
       </Helmet>
 
-      {/* 1. Dynamic Hero Section */}
-      <header className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-slate-950">
+      {/* 1. Bespoke Asymmetrical Hero Section */}
+      <header className="relative w-full min-h-screen flex flex-col lg:flex-row pt-20 lg:pt-0">
+        
+        {/* Left Column: Typography & Content */}
+        <div className="w-full lg:w-[45%] flex flex-col justify-center px-6 lg:px-16 xl:px-24 z-20 bg-alabaster py-20 lg:py-0 relative">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="text-terracotta font-body font-bold text-xs tracking-[0.3em] uppercase mb-8 flex items-center gap-4">
+              <span className="w-8 h-px bg-terracotta"></span>
+              Pioneering Build
+            </span>
+            <h1 className="text-[3.5rem] md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] 2xl:text-[7rem] font-display font-bold leading-[0.95] tracking-tighter mb-8 text-ink uppercase">
+              Shaping <br/> The <br/> <span className="text-forest">Future.</span>
+            </h1>
+            <p className="text-ink/70 text-lg md:text-xl font-body max-w-md leading-relaxed mb-12">
+              We leverage decades of expertise and master craftsmanship to deliver uncompromising commercial and residential spaces.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link
+                to="/portfolio"
+                className="group relative overflow-hidden bg-ink text-alabaster px-8 py-5 rounded-none font-display font-semibold tracking-wide uppercase transition-all duration-300 hover:text-white flex items-center justify-center sm:justify-start"
+              >
+                <span className="absolute inset-0 w-full h-full bg-terracotta translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] z-0"></span>
+                <span className="relative z-10 flex items-center gap-3">
+                  View Projects <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+              <Link
+                to="/about"
+                className="group flex items-center justify-center sm:justify-start gap-3 px-2 py-5 font-display font-semibold tracking-wide uppercase text-ink hover:text-terracotta transition-colors"
+              >
+                Our Manifesto
+                <ArrowDownRight size={18} className="group-hover:translate-y-1 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
 
-        {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-slate-900/50 z-10" />
+        {/* Right Column: Visual & Offset Grid */}
+        <div className="w-full lg:w-[55%] h-[60vh] lg:h-screen relative overflow-hidden bg-forest z-10 hidden lg:block">
+          <motion.div 
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <div className="absolute inset-0 bg-ink/30 z-10 mix-blend-multiply" />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-90"
+            >
+              <source src="https://www.weitz.com/wp-content/uploads/2025/12/Weitz-August00831767_2.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
+
+          {/* Overlapping Floating Element at Bottom Center */}
+          <div className="absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-30">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 1 }}
+              className="bg-terracotta px-8 py-4 lg:px-10 lg:py-5 rounded-xl text-alabaster shadow-2xl flex items-center justify-center gap-8 w-auto min-w-[300px] whitespace-nowrap"
+            >
+               <div className="text-center flex flex-col items-center">
+                 <h3 className="font-display text-2xl lg:text-3xl font-bold">25+</h3>
+                 <p className="font-body text-[10px] uppercase tracking-widest opacity-80 font-bold mt-1">Years Mastered</p>
+               </div>
+               <div className="w-px h-10 bg-white/30"></div>
+               <div className="text-center flex flex-col items-center">
+                 <h3 className="font-display text-2xl lg:text-3xl font-bold">100</h3>
+                 <p className="font-body text-[10px] uppercase tracking-widest opacity-80 font-bold mt-1">ENR Rank</p>
+               </div>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Mobile Visual Video Fallback */}
+        <div className="w-full h-[50vh] relative overflow-hidden lg:hidden bg-forest">
+          <div className="absolute inset-0 bg-ink/30 z-10 mix-blend-multiply" />
           <video
             autoPlay
             loop
@@ -41,75 +118,23 @@ const Home = () => {
             <source src="https://www.weitz.com/wp-content/uploads/2025/12/Weitz-August00831767_2.mp4" type="video/mp4" />
           </video>
         </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col items-start justify-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl"
-          >
-            <span className="text-amber-500 font-sans tracking-[0.2em] font-medium text-sm md:text-base uppercase mb-6 block">
-              Building the Future
-            </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-tight mb-8">
-              Excellence in <br /> Every Structure.
-            </h1>
-            <p className="text-slate-300 text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-10">
-              We leverage decades of expertise, master craftsmanship, and innovative strategies to deliver premium commercial and residential developments.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/portfolio"
-                className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-sm text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center gap-2"
-              >
-                Explore Portfolio
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/about"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-sm text-sm font-medium tracking-wider uppercase transition-colors inline-flex items-center justify-center"
-              >
-                Our Story
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs uppercase tracking-widest text-slate-300">Scroll</span>
-          <div className="w-px h-16 bg-white/20 relative overflow-hidden">
-            <motion.div
-              animate={{ y: [0, 64] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-              className="absolute top-0 left-0 w-full h-1/2 bg-amber-500"
-            />
-          </div>
-        </motion.div>
       </header>
 
-      {/* 2. Concrete Proof Banner (Stats) */}
-      <section className="bg-slate-900 text-white py-16 border-t-[6px] border-amber-600 relative z-20 -mt-2">
+      {/* 2. Concrete Proof Banner (Stats) - Redefined */}
+      <section className="bg-ink text-alabaster py-24 md:py-32 relative z-20">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x-0 md:divide-x divide-slate-800">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-alabaster/10">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="flex flex-col items-center justify-center text-center px-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col items-center justify-center text-center px-4 pt-8 md:pt-0"
               >
-                <span className="text-4xl md:text-5xl font-serif font-medium text-white mb-2">{stat.value}</span>
-                <span className="text-slate-400 text-sm tracking-wider uppercase">{stat.label}</span>
+                <span className="text-5xl md:text-7xl font-display font-bold text-terracotta mb-4">{stat.value}</span>
+                <span className="text-alabaster/60 font-body text-xs tracking-[0.2em] uppercase font-bold">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -125,70 +150,86 @@ const Home = () => {
       {/* Featured Projects */}
       <FeaturedProjects />
 
-      {/* 3. Partner Marquee (Nesto Logo) */}
-      <section className="py-24 bg-white overflow-hidden flex flex-col justify-center border-b border-slate-100">
-        <div className="container mx-auto px-6 lg:px-12 mb-12 text-center">
-          <span className="text-sm font-semibold tracking-widest text-amber-500 uppercase block">Trusted By</span>
-        </div>
+      {/* 3. Partner Marquee - Architecturally Styled */}
+      <section className="py-32 bg-ink overflow-hidden border-y border-alabaster/5 relative">
+        {/* Background typographic watermark */}
+        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[18vw] font-display font-bold text-alabaster/[0.02] whitespace-nowrap select-none pointer-events-none uppercase tracking-tighter">
+          Partners
+        </h2>
 
-        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
-          <ul className="flex w-max shrink-0 items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <li key={`logo-1-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300">
-                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-10 md:h-12 w-auto max-w-none object-contain invert" />
-              </li>
-            ))}
-          </ul>
-          <ul aria-hidden="true" className="flex w-max shrink-0 items-center justify-center md:justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <li key={`logo-2-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300">
-                <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" className="h-10 md:h-12 w-auto max-w-none object-contain invert" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+        <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="lg:w-1/4 shrink-0 text-center lg:text-left flex flex-col items-center lg:items-start">
+             <span className="w-12 h-px bg-terracotta inline-block mb-8"></span>
+             <h3 className="text-4xl md:text-5xl font-display font-bold text-alabaster uppercase tracking-tight">Our <br className="hidden lg:block"/> Network.</h3>
+             <p className="mt-6 text-alabaster/40 font-body text-sm max-w-xs mx-auto lg:mx-0 font-medium">Collaborating with trusted industry leaders to deliver uncompromising results.</p>
+          </div>
 
-      {/* 4. Financing Callout */}
-      <section className="py-24 bg-slate-100">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="bg-white p-10 md:p-16 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] rounded-2xl flex flex-col md:flex-row items-center gap-10 md:gap-16 border border-slate-100">
-            <div className="bg-amber-50 text-amber-600 w-24 h-24 rounded-full flex items-center justify-center shrink-0">
-              <BadgePercent size={40} />
-            </div>
-            <div className="flex-grow text-center md:text-left">
-              <h2 className="text-3xl font-serif text-slate-900 mb-4">Flexible Financing Options</h2>
-              <p className="text-slate-600 leading-relaxed font-sans md:max-w-2xl">
-                Remove the friction from your next big project. We partner with top-tier financial institutions to offer tailored financing solutions with competitive rates and flexible terms.
-              </p>
-            </div>
-            <div className="shrink-0 w-full md:w-auto mt-6 md:mt-0">
-              <Link
-                to="/contact"
-                className="w-full md:w-auto bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-colors inline-block text-center"
-              >
-                Learn More
-              </Link>
+          <div className="lg:w-3/4 w-full relative group [mask-image:_linear-gradient(to_right,transparent_0,_black_64px,_black_calc(100%-64px),transparent_100%)]">
+            <div className="flex flex-nowrap overflow-hidden">
+               <ul className="flex w-max shrink-0 items-center justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+                 {Array.from({ length: 10 }).map((_, i) => (
+                   <li key={`logo-1-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-20 hover:opacity-100 transition-all duration-500 hover:-translate-y-1">
+                     <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" title="Nesto Group" className="h-10 md:h-12 w-auto max-w-none object-contain brightness-0 invert" />
+                   </li>
+                 ))}
+               </ul>
+               <ul aria-hidden="true" className="flex w-max shrink-0 items-center justify-start gap-16 md:gap-24 pr-16 md:pr-24 animate-infinite-scroll group-hover:[animation-play-state:paused]">
+                 {Array.from({ length: 10 }).map((_, i) => (
+                   <li key={`logo-2-${i}`} className="inline-flex pointer-events-auto cursor-pointer shrink-0 opacity-20 hover:opacity-100 transition-all duration-500 hover:-translate-y-1">
+                     <img src="https://nestogroup.com/wp-content/themes/Netstager_Creative_Suite-3.0/images/nesto-logo.svg" alt="Nesto Group" title="Nesto Group" className="h-10 md:h-12 w-auto max-w-none object-contain brightness-0 invert" />
+                   </li>
+                 ))}
+               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Intro to Services / Philosophy (Optional buffer before footer) */}
-      <section className="py-32 bg-slate-900 text-white">
+      {/* 4. Financing Callout - Breakout Grid Style */}
+      <section className="py-32 lg:py-48 bg-forest relative overflow-hidden">
+        {/* Abstract background shape */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-ink rounded-full blur-[150px] opacity-30 -translate-y-1/2 translate-x-1/3"></div>
+
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <div className="bg-alabaster shadow-2xl p-0 flex flex-col md:flex-row transform lg:-rotate-2 lg:hover:rotate-0 transition-transform duration-700 ease-out max-w-6xl mx-auto">
+            <div className="bg-terracotta text-alabaster p-12 lg:p-16 md:w-2/5 flex flex-col items-start justify-center">
+              <BadgePercent size={64} className="mb-8 opacity-80" strokeWidth={1} />
+              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Capital Solutions.</h2>
+            </div>
+            <div className="p-12 lg:p-20 md:w-3/5 flex flex-col justify-center">
+              <p className="text-ink text-xl lg:text-2xl leading-relaxed font-body mb-10 max-w-xl font-medium">
+                Remove the friction from your next big project. We partner with top-tier financial institutions to offer tailored financing solutions with competitive rates and flexible terms.
+              </p>
+              <div>
+                <Link
+                  to="/contact"
+                  className="bg-ink hover:bg-forest text-alabaster px-10 py-5 text-sm font-display font-bold tracking-[0.2em] uppercase transition-colors inline-block text-center"
+                >
+                  Explore Options
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro to Services / Philosophy */}
+      <section className="py-40 md:py-56 bg-ink text-alabaster relative border-t border-alabaster/10">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <ShieldCheck size={48} className="text-amber-500 mx-auto mb-8" />
-            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">Uncompromising Quality & Integrity.</h2>
-            <p className="text-slate-400 text-lg leading-relaxed mb-12">
-              From initial groundwork to final finishing, our process is defined by meticulous attention to detail. We believe that true luxury lies in the foundation of trust we build with every client.
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            <ShieldCheck size={64} strokeWidth={1} className="text-terracotta mb-12" />
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-10 leading-[1.1] tracking-tighter uppercase text-forest">
+              Uncompromising <br/> <span>Integrity.</span>
+            </h2>
+            <p className="text-alabaster/60 text-xl md:text-2xl font-body leading-relaxed mb-16 max-w-3xl font-light">
+              From initial groundwork to final finishing, our process is defined by meticulous attention to detail. True luxury lies in the foundation of trust we build with every client.
             </p>
             <Link
               to="/portfolio"
-              className="text-amber-500 hover:text-amber-400 text-sm font-medium tracking-widest uppercase transition-colors inline-flex items-center gap-2 pb-1 border-b border-amber-500 hover:border-amber-400"
+              className="group text-terracotta font-display font-bold tracking-[0.2em] uppercase transition-colors flex items-center gap-6 relative overflow-hidden text-lg"
             >
-              View Our Capability
-              <ArrowRight size={16} />
+              <span>View Our Capability</span>
+              <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
           </div>
         </div>

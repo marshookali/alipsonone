@@ -6,7 +6,7 @@ const OurCommitments = () => {
     {
       title: "Safety",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-500 group-hover:scale-110">
           <path d="M24 8c-8.8 0-16 7-16 16v2h32v-2c0-9-7.2-16-16-16z" />
           <path d="M4 26h40v4H4z" />
           <path d="M24 8v10" />
@@ -22,9 +22,9 @@ const OurCommitments = () => {
     {
       title: "Quality",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-500 group-hover:scale-110">
           <rect x="10" y="16" width="22" height="22" rx="2" />
-          <path d="M16 27l5 5 17-17" strokeWidth="2" />
+          <path d="M16 27l5 5 17-17" strokeWidth="1.5" />
           <path d="M16 22h-6" />
         </svg>
       ),
@@ -33,7 +33,7 @@ const OurCommitments = () => {
     {
       title: "Sustainability",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-500 group-hover:scale-110">
           <path d="M24 42v-22" />
           <path d="M24 32c-6 0-10-4-10-10 0 6 4 10 10 10z" />
           <path d="M24 24c5 0 9-3 9-9 0 4-4 9-9 9z" />
@@ -46,7 +46,7 @@ const OurCommitments = () => {
     {
       title: "Stewardship",
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-105">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-500 group-hover:scale-110">
           <path d="M9 25l8 11 16-16-6-6" />
           <path d="M22 18l6 6" />
           <path d="M39 25l-8 11-16-16 6-6" />
@@ -60,56 +60,56 @@ const OurCommitments = () => {
   ];
 
   return (
-    <section className="bg-white py-24 md:py-32 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+    <section className="bg-alabaster py-32 md:py-48 relative overflow-hidden border-t border-ink/5">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-24 mb-20 items-start">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-24 mb-32 items-start">
           {/* Left Column (60%) */}
           <div className="w-full md:w-[60%] flex flex-col items-start gap-8">
-            <div className="flex items-center gap-4">
-              <div className="w-[40px] h-[1.5px] bg-amber-600"></div>
-              <span className="text-[12px] tracking-[2px] text-amber-600 uppercase font-bold font-sans">
-                Our Commitments
+            <div className="flex items-center gap-5">
+              <div className="w-[50px] h-[1px] bg-terracotta"></div>
+              <span className="text-[11px] tracking-[0.3em] text-terracotta uppercase font-bold font-body">
+                Core Ethos
               </span>
             </div>
-            <h2 className="text-[36px] md:text-[42px] lg:text-[48px] font-bold text-[#1a1a1a] font-serif leading-[1.15]">
-              We know that every<br className="hidden lg:block"/> decision has an impact
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-ink font-display leading-[1.05] uppercase">
+              Decisions <br className="hidden lg:block"/> With <span className="text-forest">Impact.</span>
             </h2>
           </div>
           
           {/* Right Column (40%) */}
-          <div className="w-full md:w-[40%] md:pt-14 mt-4 md:mt-0">
-            <p className="text-[16px] text-[#4a4a4a] leading-[1.6] font-sans">
+          <div className="w-full md:w-[40%] md:pt-16 mt-4 md:mt-0">
+            <p className="text-xl text-ink/70 leading-relaxed font-body max-w-md font-medium">
               Our commitments to safety, quality, sustainability and community stewardship ensure your lasting success.
             </p>
           </div>
         </div>
 
         {/* Bottom Section (Cards Grid) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex flex-col group items-start h-full"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}
+              className="flex flex-col group items-start h-full border-t border-ink/10 pt-10 hover:border-terracotta transition-colors duration-500"
             >
-              <div className="mb-6 h-[50px] flex items-center justify-start text-[#1a1a1a] group-hover:text-amber-500 transition-colors duration-300">
+              <div className="mb-8 h-[60px] flex items-center justify-start text-ink group-hover:text-terracotta transition-colors duration-500">
                 {card.icon}
               </div>
-              <h3 className="text-[20px] font-bold text-[#1a1a1a] font-sans mb-4">
+              <h3 className="text-2xl font-bold text-ink font-display mb-6">
                 {card.title}
               </h3>
-              <p className="text-[15px] leading-[1.7] text-[#4a4a4a] font-sans mb-8 flex-grow">
+              <p className="text-base leading-relaxed text-ink/70 font-body mb-10 flex-grow font-medium">
                 {card.text}
               </p>
               
-              <a href="#" className="flex items-center gap-3 text-[11px] tracking-[1.5px] text-amber-600 font-bold uppercase transition-colors mt-auto group-hover:opacity-80">
-                Read More
-                <span className="w-[40px] h-[1.5px] bg-amber-600 transition-all duration-300 group-hover:w-[60px]"></span>
+              <a href="#" className="flex items-center gap-4 text-xs tracking-[0.2em] text-ink font-bold uppercase transition-colors mt-auto group-hover:text-terracotta">
+                Discover
+                <span className="w-[30px] h-[1px] bg-ink transition-all duration-500 group-hover:bg-terracotta group-hover:w-[50px]"></span>
               </a>
             </motion.div>
           ))}

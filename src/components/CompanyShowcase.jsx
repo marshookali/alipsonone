@@ -41,7 +41,7 @@ const CompanyShowcase = () => {
       title: "Careers",
       desc: "When you work at our company, you're never at a standstill. Neither is your career.",
       linkText: "JOIN THE TEAM",
-      linkUrl: "/contact", // Using contact as placeholder for careers
+      linkUrl: "/contact",
       img: "https://images.pexels.com/photos/544966/pexels-photo-544966.jpeg?auto=compress&cs=tinysrgb&w=1000"
     },
     {
@@ -61,104 +61,89 @@ const CompanyShowcase = () => {
   ];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-alabaster">
       
       {/* 1. At A Glance (Bento Box Grid) */}
-      <section className="container mx-auto px-6 lg:px-12 py-24">
-        {/* Responsive Grid container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-slate-300">
+      <section className="container mx-auto px-6 lg:px-12 py-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-ink/10">
           
-          {/* Box 1: Title (Spans 2 columns on lg) */}
-          <div className="lg:col-span-2 border-r border-b border-slate-300 p-8 md:p-12 flex items-center bg-white">
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-sans text-slate-900 leading-tight tracking-tight">
-              Our company <br /> at a glance
+          <div className="lg:col-span-2 border-r border-b border-ink/10 p-12 lg:p-20 flex items-center bg-alabaster">
+            <h2 className="text-5xl lg:text-7xl font-display font-bold text-ink leading-[1.05] tracking-tighter uppercase">
+              Company <br /> At a Glance.
             </h2>
           </div>
 
-          {/* Box 2: 16 Locations */}
-          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-white h-64 md:h-auto min-h-[300px]">
-            <span className="text-6xl md:text-7xl font-sans text-slate-900 tracking-tight">16</span>
-            <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mt-auto">
-              <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
-              National Office Locations
+          <div className="col-span-1 border-r border-b border-ink/10 p-10 lg:p-14 flex flex-col justify-between bg-white h-72 md:h-auto group hover:bg-forest transition-colors duration-500">
+            <span className="text-7xl font-display font-bold text-terracotta tracking-tight group-hover:text-alabaster transition-colors">16</span>
+            <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.2em] text-ink/70 mt-auto group-hover:text-alabaster/70 transition-colors">
+              <span className="w-8 h-px bg-terracotta group-hover:bg-alabaster transition-colors inline-block"></span>
+              National Offices
             </div>
           </div>
 
-          {/* Box 3: Image (Drone Controller) */}
-          <div className="col-span-1 border-r border-b border-slate-300 relative bg-white overflow-hidden h-64 md:h-auto min-h-[300px] group">
+          <div className="col-span-1 border-r border-b border-ink/10 relative bg-ink overflow-hidden h-72 md:h-auto min-h-[300px] group">
             <img 
               src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" 
-              alt="Construction engineer reviewing project plans on site" 
+              alt="Construction engineer" 
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100"
             />
           </div>
 
-          {/* Box 4: $10B Revenue */}
-          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-white h-64 md:h-auto min-h-[300px]">
-            <span className="text-6xl md:text-7xl font-sans text-slate-900 tracking-tight">$10B</span>
-            <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mt-auto">
-              <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
+          <div className="col-span-1 border-r border-b border-ink/10 p-10 lg:p-14 flex flex-col justify-between bg-ink h-72 md:h-auto min-h-[300px] group hover:bg-terracotta transition-colors duration-500">
+            <span className="text-7xl font-display font-bold text-alabaster tracking-tight">$10B</span>
+            <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.2em] text-alabaster/60 mt-auto">
+              <span className="w-8 h-px bg-alabaster/60 inline-block"></span>
               Annual Revenue
             </div>
           </div>
 
-          {/* Box 5: Image (Rebar) */}
-          <div className="col-span-1 border-r border-b border-slate-300 relative bg-white overflow-hidden h-64 md:h-auto min-h-[300px] group">
+          <div className="col-span-1 border-r border-b border-ink/10 relative bg-ink overflow-hidden h-72 md:h-auto min-h-[300px] group">
             <img 
               src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1000" 
-              alt="Modern construction building with glass and steel facade" 
+              alt="Modern construction building" 
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100"
             />
           </div>
 
-          {/* Box 6: Badge Area */}
-          <div className="col-span-1 border-r border-b border-slate-300 p-8 md:p-12 flex flex-col justify-between bg-white h-64 md:h-auto min-h-[300px]">
+          <div className="col-span-1 border-r border-b border-ink/10 p-10 lg:p-14 flex flex-col justify-between bg-alabaster h-72 md:h-auto min-h-[300px]">
             <div className="w-full h-full flex items-center justify-center -mt-4">
-              {/* Dummy badge made of CSS for the "Great Place to Work" */}
-              <div className="w-36 h-44 bg-[#0B132B] flex flex-col items-center justify-center text-center p-4">
-                <span className="text-white font-bold text-xl leading-snug mb-3">Great <br/> Place <br/> To <br/> Work</span>
-                <span className="text-blue-100 text-sm opacity-90">Certified</span>
-                <span className="text-blue-100/70 text-[9px] mt-1.5 uppercase letter-spacing-widest">Jul 2025-Jul 2026</span>
+              <div className="w-40 h-48 bg-forest flex flex-col items-center justify-center text-center p-6 shadow-2xl">
+                <span className="text-alabaster font-display font-bold text-2xl leading-[1.1] mb-4 uppercase">Great <br/> Place <br/> To <br/> Work</span>
+                <span className="text-terracotta font-body text-xs font-bold tracking-widest uppercase">Certified</span>
               </div>
-            </div>
-            <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700">
-              <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
-              Great Place To Work
             </div>
           </div>
 
-          {/* Box 7: Image (Worker looking) */}
-          <div className="col-span-1 border-r border-b border-slate-300 relative bg-white overflow-hidden h-64 md:h-auto min-h-[300px] group">
+          <div className="col-span-1 border-r border-b border-ink/10 relative bg-ink overflow-hidden h-72 md:h-auto min-h-[300px] group">
             <img 
               src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000" 
-              alt="Construction workers collaborating on building site" 
+              alt="Construction workers" 
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100"
             />
           </div>
 
         </div>
       </section>
 
-      {/* 2. How We Build (Tabbed Component) */}
-      <section className="bg-white py-24">
+      {/* 2. How We Build */}
+      <section className="bg-alabaster py-24 pb-48">
         <div className="container mx-auto px-6 lg:px-12">
           
-          {/* Card Container */}
-          <div className="bg-[#e9ecef] rounded-2xl p-8 md:p-12 lg:p-16">
+          <div className="bg-white rounded-none border border-ink/5 p-10 md:p-16 lg:p-20 shadow-xl relative mt-10">
 
-            <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mb-4">
-              <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
+            <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-8">
+              <span className="w-8 h-px bg-terracotta inline-block"></span>
               The System
             </div>
-            <h2 className="text-4xl md:text-5xl font-sans text-slate-900 mb-14 tracking-tight">How we build</h2>
+            <h2 className="text-5xl lg:text-7xl font-display font-bold text-ink mb-20 tracking-tighter uppercase">How we build.</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
               
               {/* Left Nav */}
-              <div className="lg:col-span-3 flex flex-col gap-0 border-b border-slate-200">
+              <div className="lg:col-span-4 flex flex-col gap-0 border-l px-6 border-ink/10">
                 {howWeBuildTabs.map((tab, idx) => {
                   const isActive = activeHowWeBuild === idx;
                   return (
@@ -166,69 +151,58 @@ const CompanyShowcase = () => {
                       key={idx}
                       onClick={() => setActiveHowWeBuild(idx)}
                       onMouseEnter={() => setActiveHowWeBuild(idx)}
-                      className={`relative text-left py-4 px-4 flex items-center gap-3 border-t border-slate-200 transition-all duration-300 ${
-                        isActive ? "bg-slate-50" : "hover:bg-slate-50/50"
-                      }`}
+                      className={`relative text-left py-6 flex flex-col gap-2 transition-all duration-500`}
                     >
-                      {/* Active Navy Border Indicator */}
-                      {isActive && (
-                        <motion.div 
-                          layoutId="activeTabIndicator" 
-                          className="absolute left-0 top-0 bottom-0 w-1 bg-slate-900"
-                        />
-                      )}
-                      {isActive && (
-                        <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
-                      )}
-                      <span className={`font-sans text-lg tracking-wide transition-colors ${isActive ? 'text-slate-900 font-medium' : 'text-slate-400'}`}>
+                      <span className={`font-display font-bold text-2xl tracking-wide uppercase transition-colors ${isActive ? 'text-ink' : 'text-ink/30'}`}>
                         {tab.title}
                       </span>
+                      {isActive && (
+                        <motion.div
+                           layoutId="activeTabUnderline"
+                           className="w-12 h-1 bg-terracotta mt-2"
+                        />
+                      )}
                     </button>
                   );
                 })}
-                <div className="py-8">
-                  <Link to="/about" className="uppercase text-xs font-semibold tracking-wider text-slate-900 flex items-center gap-2 group">
-                    View The System <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
               </div>
 
-              {/* Middle Image w/ Crossfade */}
-              <div className="lg:col-span-5 flex items-center justify-center py-4">
-                <div className="relative w-full max-w-[420px] aspect-square rounded-xl overflow-hidden bg-slate-100">
+              {/* Right Side: Image + Desc */}
+              <div className="lg:col-span-8 flex flex-col md:flex-row gap-10 items-center bg-alabaster p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
+                <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden bg-ink shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={activeHowWeBuild}
                       src={howWeBuildTabs[activeHowWeBuild].img}
                       alt={howWeBuildTabs[activeHowWeBuild].title}
-                      initial={{ opacity: 0, scale: 1.05 }}
+                      initial={{ opacity: 0, scale: 1.1 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-90"
                     />
                   </AnimatePresence>
                 </div>
-              </div>
 
-              {/* Right Desc */}
-              <div className="lg:col-span-4 flex flex-col justify-end h-full lg:min-h-[420px] pb-4">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeHowWeBuild}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <p className="text-sm text-slate-600 leading-relaxed mb-6 font-sans">
-                      {howWeBuildTabs[activeHowWeBuild].desc}
-                    </p>
-                    <Link to="/about" className="uppercase text-xs font-semibold tracking-wider text-slate-900 flex items-center gap-2 group">
-                      {howWeBuildTabs[activeHowWeBuild].linkText} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </motion.div>
-                </AnimatePresence>
+                <div className="flex flex-col justify-center max-w-sm">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeHowWeBuild}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <p className="text-lg text-ink/80 leading-relaxed mb-10 font-body font-medium">
+                        {howWeBuildTabs[activeHowWeBuild].desc}
+                      </p>
+                      <Link to="/about" className="uppercase text-[11px] font-bold font-body tracking-[0.2em] text-ink flex items-center gap-4 group hover:text-terracotta transition-colors">
+                        {howWeBuildTabs[activeHowWeBuild].linkText} 
+                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
+                      </Link>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
 
             </div>
@@ -237,40 +211,37 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 3. What We Build */}
-      <section className="bg-slate-100 py-24 border-t border-slate-200">
-        <div className="container mx-auto px-6 lg:px-12">
-          
-          {/* Main Box Area */}
-          <div className="bg-[#f8f9fa] border border-slate-300 grid grid-cols-1 lg:grid-cols-2">
+      <section className="bg-forest py-32 border-t border-ink/5 relative overflow-hidden">
+        {/* Background abstract element */}
+        <div className="absolute bottom-0 left-0 w-full h-[500px] bg-ink mix-blend-overlay opacity-20 blur-[150px]"></div>
+
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             
-            {/* Left Content */}
-            <div className="p-8 md:p-16 lg:p-24 flex flex-col justify-center relative">
-              
-              <div className="flex items-center gap-3 uppercase text-xs font-semibold tracking-wider text-slate-700 mb-12">
-                <span className="w-2.5 h-2.5 bg-red-600 inline-block"></span>
+            <div className="p-10 lg:p-24 flex flex-col justify-center bg-ink border border-ink/20 z-20">
+              <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-16">
+                <span className="w-8 h-px bg-terracotta inline-block"></span>
                 What We Build
               </div>
 
-              {/* Dynamic Categories */}
-              <div className="flex flex-col gap-2 mb-16 relative">
+              <div className="flex flex-col gap-6 mb-20 relative">
                 {whatWeBuildTabs.map((tab, idx) => {
                   const isActive = activeWhatWeBuild === idx;
                   return (
                     <div 
                       key={idx}
-                      className="relative pl-6 cursor-pointer overflow-visible"
+                      className="relative pl-8 cursor-pointer overflow-visible"
                       onMouseEnter={() => setActiveWhatWeBuild(idx)}
                     >
-                      {/* Active Left Border Marker */}
                       {isActive && (
                         <motion.div 
-                          layoutId="whatWeBuildActive"
-                          className="absolute left-0 top-0 bottom-0 w-1 bg-red-600"
+                          layoutId="whatWeBuildActiveMarker"
+                          className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-terracotta rounded-full"
                         />
                       )}
                       
-                      <h3 className={`text-4xl md:text-5xl font-sans tracking-tight transition-colors duration-300 ${
-                        isActive ? "text-slate-900" : "text-slate-400"
+                      <h3 className={`text-4xl lg:text-[3.2rem] font-display font-bold uppercase transition-colors duration-500 tracking-tighter break-words ${
+                        isActive ? "text-alabaster" : "text-alabaster/20"
                       }`}>
                         {tab.title}
                       </h3>
@@ -279,46 +250,44 @@ const CompanyShowcase = () => {
                 })}
               </div>
 
-              {/* Dynamic Description Area */}
-              <div className="h-32">
+              <div className="h-40">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeWhatWeBuild}
-                    initial={{ opacity: 0, y: 5 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.4 }}
                   >
-                    <p className="text-slate-700 md:text-lg mb-6 max-w-sm">
+                    <p className="text-alabaster/70 text-lg lg:text-xl font-body font-medium mb-8 max-w-md leading-relaxed">
                       {whatWeBuildTabs[activeWhatWeBuild].desc}
                     </p>
-                    <Link to={whatWeBuildTabs[activeWhatWeBuild].linkUrl} className="uppercase text-xs font-semibold tracking-wider text-slate-900 flex items-center gap-2 group">
-                      {whatWeBuildTabs[activeWhatWeBuild].linkText} <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                    <Link to={whatWeBuildTabs[activeWhatWeBuild].linkUrl} className="uppercase text-[11px] font-bold font-body tracking-[0.2em] text-alabaster flex items-center gap-4 group hover:text-terracotta transition-colors">
+                      {whatWeBuildTabs[activeWhatWeBuild].linkText} 
+                      <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
                     </Link>
                   </motion.div>
                 </AnimatePresence>
               </div>
-
             </div>
 
-            {/* Right Image Container */}
-            <div className="relative h-[400px] lg:h-auto min-h-[500px] overflow-hidden bg-slate-200">
+            <div className="relative h-[500px] lg:h-auto w-full overflow-hidden z-10">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeWhatWeBuild}
                   src={whatWeBuildTabs[activeWhatWeBuild].img}
                   alt={whatWeBuildTabs[activeWhatWeBuild].title}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80"
                 />
               </AnimatePresence>
+              <div className="absolute inset-0 bg-ink/20"></div>
             </div>
 
           </div>
-
         </div>
       </section>
 

@@ -5,32 +5,33 @@ import { projectsData } from '../data/projects';
 
 const FeaturedProjects = () => {
   return (
-    <section className="py-24 bg-white relative z-20">
+    <section className="py-32 bg-alabaster relative z-20">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-3xl"
           >
-            <span className="text-amber-500 font-sans tracking-[0.2em] font-medium text-sm md:text-base uppercase mb-4 block">
+            <span className="text-terracotta font-body tracking-[0.3em] font-bold text-xs uppercase mb-6 flex items-center gap-4">
+              <span className="w-8 h-px bg-terracotta"></span>
               Our Portfolio
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 leading-tight">
-              Featured Works.
+            <h2 className="text-5xl md:text-7xl font-display font-bold text-ink leading-none uppercase">
+              Featured <span className="text-forest">Works.</span>
             </h2>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Link
               to="/portfolio"
-              className="group inline-flex items-center gap-3 text-sm font-medium tracking-widest uppercase text-slate-900 hover:text-amber-600 transition-colors pb-1 border-b-2 border-slate-900 hover:border-amber-600"
+              className="group inline-flex items-center gap-4 text-xs font-bold tracking-[0.2em] uppercase text-ink hover:text-terracotta transition-colors pb-2 border-b-2 border-ink hover:border-terracotta"
             >
               View All Projects
               <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -38,35 +39,35 @@ const FeaturedProjects = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {projectsData.slice(0, 6).map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="group relative"
             >
-              <Link to={`/projects/${project.id}`} className="block overflow-hidden relative aspect-[4/5] md:aspect-[3/4]">
-                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10" />
+              <Link to={`/projects/${project.id}`} className="block overflow-hidden relative aspect-[3/4] bg-ink">
+                <div className="absolute inset-0 bg-ink/40 group-hover:bg-ink/10 transition-colors duration-700 z-10 mix-blend-multiply" />
+                <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-ink via-ink/40 to-transparent z-10" />
                 
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 p-8 z-20 flex flex-col justify-end transition-transform duration-500 group-hover:-translate-y-2">
-                  <span className="text-amber-400 text-xs font-sans tracking-widest uppercase mb-3 drop-shadow-md">
+                <div className="absolute inset-x-0 bottom-0 p-10 z-20 flex flex-col justify-end transition-transform duration-700 group-hover:-translate-y-4">
+                  <span className="text-terracotta text-xs font-body tracking-[0.2em] font-bold uppercase mb-4">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-serif text-white mb-4 drop-shadow-md">
+                  <h3 className="text-3xl font-display font-bold text-alabaster mb-6 leading-tight">
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-white/90 font-medium tracking-wide group-hover:text-amber-400 transition-colors">
-                    <span>Explore Project</span>
+                  <div className="flex items-center gap-3 text-sm text-alabaster/80 font-bold tracking-widest uppercase group-hover:text-terracotta transition-colors">
+                    <span>Explore</span>
                     <ArrowUpRight size={16} />
                   </div>
                 </div>

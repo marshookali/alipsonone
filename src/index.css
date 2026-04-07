@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --color-ink: #121415;
+  --color-alabaster: #F7F5F0;
+  --color-terracotta: #C8553D;
+  --color-forest: #2C3D32;
   --color-slate-900: #0f172a;
   --color-slate-800: #1e293b;
   --color-slate-50: #f8fafc;
@@ -10,7 +14,7 @@
   --color-steel-blue: #4682b4;
   --color-charcoal: #36454F;
 
-  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-infinite-scroll: infinite-scroll 45s linear infinite;
 
   @keyframes infinite-scroll {
     from {
@@ -25,7 +29,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-slate-50 text-slate-900 antialiased;
+    @apply font-body bg-alabaster text-ink antialiased;
   }
 
   h1,
@@ -34,7 +38,7 @@
   h4,
   h5,
   h6 {
-    @apply font-serif tracking-tight text-slate-900;
+    @apply font-display tracking-tight text-ink;
   }
 
   /* Make sure images are responsive and block by default */
