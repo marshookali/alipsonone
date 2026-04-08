@@ -4,8 +4,6 @@ import { Menu, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 const Navbar = () => {
-
-  
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -31,11 +29,13 @@ const Navbar = () => {
   ];
 
   const isHome = location.pathname === '/';
-  // On home page, we want it transparent at top. On other pages, maybe solid.
-  // Using z-[60] so the header and toggle stay above the mobile menu slide-out
+  
+  // Here we apply the transparent, frosted glass styling exclusively when the user scrolls
   const navbarClasses = cn(
-    'fixed top-0 left-0 right-0 z-[60] transition-all duration-300 py-4',
-    isScrolled || !isHome || mobileMenuOpen ? 'bg-slate-950/95 backdrop-blur-md shadow-md py-4' : 'bg-transparent py-6'
+    'fixed top-0 left-0 right-0 z-[60] transition-all duration-500 py-4',
+    isScrolled || mobileMenuOpen 
+      ? 'bg-ink/30 backdrop-blur-xl border-b border-white/10 shadow-lg backdrop-saturate-150 py-4' 
+      : !isHome ? 'bg-ink py-6' : 'bg-transparent py-6'
   );
 
   const textClasses = cn(
@@ -47,7 +47,13 @@ const Navbar = () => {
     <>
       <header className={navbarClasses}>
         <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-          <Link to="/" className={cn("text-2xl font-serif tracking-tight font-bold", textClasses)}>
+          <Link 
+            to="/" 
+            className={cn(
+              "text-2xl font-serif tracking-tight font-bold transition-colors duration-300",
+              isHome && !isScrolled && !mobileMenuOpen ? "text-slate-950" : "text-slate-50"
+            )}
+          >
             ALIPSON<span className="text-amber-500"></span>
           </Link>
 
@@ -88,7 +94,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile Nav - Extracted outside <header> to bypass CSS containing block issues caused by backdrop-blur */}
+      {/* Mobile Nav */}
       <div className={cn(
         "fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden",
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -99,6 +105,7 @@ const Navbar = () => {
               <Link 
                 to={link.path}
                 className="text-white text-2xl font-serif hover:text-amber-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
@@ -108,6 +115,7 @@ const Navbar = () => {
             <Link 
               to="/contact"
               className="text-white text-2xl font-serif hover:text-amber-500 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
@@ -116,6 +124,7 @@ const Navbar = () => {
         <Link 
           to="/contact" 
           className="mt-4 bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-sm text-lg font-medium tracking-wider transition-colors"
+          onClick={() => setMobileMenuOpen(false)}
         >
           Request a Quote
         </Link>
