@@ -84,7 +84,10 @@ const Navbar = () => {
 
           {/* Mobile Toggle */}
           <button 
-            className={cn("md:hidden p-2 z-[60]", textClasses)} 
+            className={cn(
+              "md:hidden p-2 z-[60] transition-colors duration-300", 
+              isHome && !isScrolled && !mobileMenuOpen ? "text-slate-950" : "text-slate-50"
+            )} 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
