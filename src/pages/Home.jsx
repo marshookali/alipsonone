@@ -46,7 +46,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
                 to="/portfolio"
-                className="group relative overflow-hidden bg-ink text-alabaster px-8 py-5 rounded-none font-display font-semibold tracking-wide uppercase transition-all duration-300 hover:text-white flex items-center justify-center sm:justify-start"
+                className="group relative overflow-hidden bg-ink text-alabaster px-8 py-5 rounded-full font-display font-semibold tracking-wide uppercase transition-all duration-300 hover:text-white flex items-center justify-center sm:justify-start"
               >
                 <span className="absolute inset-0 w-full h-full bg-terracotta translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] z-0"></span>
                 <span className="relative z-10 flex items-center gap-3">
@@ -123,7 +123,7 @@ const Home = () => {
       {/* 2. Concrete Proof Banner (Stats) - Redefined */}
       <section className="bg-ink text-alabaster py-24 md:py-32 relative z-20">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-alabaster/10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-alabaster/10">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -131,10 +131,10 @@ const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-center justify-center text-center px-4 pt-8 md:pt-0"
+                className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-16 lg:py-12 bg-ink"
               >
-                <span className="text-5xl md:text-7xl font-display font-bold text-terracotta mb-4">{stat.value}</span>
-                <span className="text-alabaster/60 font-body text-xs tracking-[0.2em] uppercase font-bold">{stat.label}</span>
+                <span className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold text-terracotta mb-4 whitespace-nowrap tracking-tight">{stat.value}</span>
+                <span className="text-alabaster/60 font-body text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -191,7 +191,7 @@ const Home = () => {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-ink rounded-full blur-[150px] opacity-30 -translate-y-1/2 translate-x-1/3"></div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="bg-alabaster shadow-2xl p-0 flex flex-col md:flex-row transform lg:-rotate-2 lg:hover:rotate-0 transition-transform duration-700 ease-out max-w-6xl mx-auto">
+          <div className="bg-alabaster shadow-2xl p-0 flex flex-col md:flex-row transform lg:-rotate-2 lg:hover:rotate-0 transition-transform duration-700 ease-out max-w-6xl mx-auto rounded-[2rem] overflow-hidden">
             <div className="bg-terracotta text-alabaster p-12 lg:p-16 md:w-2/5 flex flex-col items-start justify-center">
               <BadgePercent size={64} className="mb-8 opacity-80" strokeWidth={1} />
               <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Capital Solutions.</h2>
@@ -203,7 +203,7 @@ const Home = () => {
               <div>
                 <Link
                   to="/contact"
-                  className="bg-ink hover:bg-forest text-alabaster px-10 py-5 text-sm font-display font-bold tracking-[0.2em] uppercase transition-colors inline-block text-center"
+                  className="bg-ink hover:bg-forest text-alabaster px-10 py-5 rounded-full text-sm font-display font-bold tracking-[0.2em] uppercase transition-colors inline-block text-center"
                 >
                   Explore Options
                 </Link>

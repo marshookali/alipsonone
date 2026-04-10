@@ -65,7 +65,7 @@ const CompanyShowcase = () => {
       
       {/* 1. At A Glance (Bento Box Grid) */}
       <section className="container mx-auto px-6 lg:px-12 py-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-ink/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-ink/10 rounded-[2rem] overflow-hidden">
           
           <div className="lg:col-span-2 border-r border-b border-ink/10 p-12 lg:p-20 flex items-center bg-alabaster">
             <h2 className="text-5xl lg:text-7xl font-display font-bold text-ink leading-[1.05] tracking-tighter uppercase">
@@ -132,7 +132,7 @@ const CompanyShowcase = () => {
       <section className="bg-alabaster py-24 pb-48">
         <div className="container mx-auto px-6 lg:px-12">
           
-          <div className="bg-white rounded-none border border-ink/5 p-10 md:p-16 lg:p-20 shadow-xl relative mt-10">
+          <div className="bg-white rounded-[2rem] border border-ink/5 p-10 md:p-16 lg:p-20 shadow-xl relative mt-10">
 
             <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-8">
               <span className="w-8 h-px bg-terracotta inline-block"></span>
@@ -168,8 +168,8 @@ const CompanyShowcase = () => {
               </div>
 
               {/* Right Side: Image + Desc */}
-              <div className="lg:col-span-8 flex flex-col md:flex-row gap-10 items-center bg-alabaster p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
-                <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden bg-ink shrink-0">
+              <div className="lg:col-span-8 flex flex-col md:flex-row gap-10 items-center bg-alabaster rounded-3xl p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
+                <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden rounded-2xl bg-ink shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={activeHowWeBuild}
@@ -216,7 +216,7 @@ const CompanyShowcase = () => {
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-ink mix-blend-overlay opacity-20 blur-[150px]"></div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 rounded-[2rem] overflow-hidden">
             
             <div className="p-10 lg:p-24 flex flex-col justify-center bg-ink border border-ink/20 z-20">
               <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-16">
