@@ -78,9 +78,10 @@ const About = () => {
                   <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-amber-500 md:-translate-x-1/2 flex items-center justify-center shadow-lg z-10" />
                   
                   <div className={`md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-16 text-left md:text-right' : 'md:pl-16 text-left'}`}>
-                    <span className="text-4xl font-serif text-amber-600 opacity-30 absolute -mt-6 -ml-4 md:ml-0 md:-mt-8 -z-10">{item.year}</span>
-                    <span className="text-2xl font-serif font-medium text-slate-900 block mb-2">{item.title}</span>
-                    <p className="text-slate-600 leading-relaxed bg-white/80 p-1 md:p-0">{item.description}</p>
+                    <div className="relative">
+                      <span className="text-2xl font-serif font-medium text-slate-900 block mb-2">{item.title}</span>
+                      <p className="text-slate-600 leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -93,7 +94,7 @@ const About = () => {
       <section className="py-24 bg-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <span className="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3 block">Leadership</span>
-          <h2 className="text-4xl font-serif mb-16">The Visionaries Behind the Builds</h2>
+          <h2 className="text-4xl font-serif mb-16 text-white">The Visionaries Behind the Builds</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, i) => (

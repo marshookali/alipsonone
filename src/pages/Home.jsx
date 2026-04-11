@@ -90,7 +90,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="bg-terracotta px-8 py-4 lg:px-10 lg:py-5 rounded-xl text-alabaster shadow-2xl flex items-center justify-center gap-8 w-auto min-w-[300px] whitespace-nowrap"
+              className="bg-terracotta px-8 py-4 lg:px-10 lg:py-5 rounded-full text-alabaster shadow-2xl flex items-center justify-center gap-8 w-auto min-w-[300px] whitespace-nowrap"
             >
                <div className="text-center flex flex-col items-center">
                  <h3 className="font-display text-2xl lg:text-3xl font-bold">25+</h3>
