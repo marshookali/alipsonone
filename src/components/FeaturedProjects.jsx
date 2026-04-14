@@ -5,9 +5,9 @@ import { projectsData } from '../data/projects';
 
 const FeaturedProjects = () => {
   return (
-    <section className="py-32 bg-alabaster relative z-20">
+    <section className="py-14 md:py-32 bg-alabaster relative z-20">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-20 gap-6 md:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -19,7 +19,7 @@ const FeaturedProjects = () => {
               <span className="w-8 h-px bg-terracotta"></span>
               Our Portfolio
             </span>
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-ink leading-none uppercase">
+            <h2 className="text-3xl md:text-7xl font-display font-bold text-ink leading-none uppercase">
               Featured <span className="text-forest">Works.</span>
             </h2>
           </motion.div>

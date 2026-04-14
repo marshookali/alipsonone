@@ -64,11 +64,11 @@ const CompanyShowcase = () => {
     <div className="w-full bg-alabaster">
       
       {/* 1. At A Glance (Bento Box Grid) */}
-      <section className="container mx-auto px-6 lg:px-12 py-32">
+      <section className="container mx-auto px-6 lg:px-12 py-12 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-ink/10 rounded-[2rem] overflow-hidden">
           
           <div className="lg:col-span-2 border-r border-b border-ink/10 p-12 lg:p-20 flex items-center bg-alabaster">
-            <h2 className="text-5xl lg:text-7xl font-display font-bold text-ink leading-[1.05] tracking-tighter uppercase">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink leading-[1.05] tracking-tighter uppercase">
               Company <br /> At a Glance.
             </h2>
           </div>
@@ -129,7 +129,7 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 2. How We Build */}
-      <section className="bg-alabaster py-24 pb-48">
+      <section className="bg-alabaster py-12 md:py-24 pb-16 md:pb-48">
         <div className="container mx-auto px-6 lg:px-12">
           
           <div className="bg-white rounded-[2rem] border border-ink/5 p-10 md:p-16 lg:p-20 shadow-xl relative mt-10">
@@ -138,7 +138,7 @@ const CompanyShowcase = () => {
               <span className="w-8 h-px bg-terracotta inline-block"></span>
               The System
             </div>
-            <h2 className="text-5xl lg:text-7xl font-display font-bold text-ink mb-20 tracking-tighter uppercase">How we build.</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink mb-10 md:mb-20 tracking-tighter uppercase">How we build.</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
               
@@ -211,7 +211,7 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 3. What We Build */}
-      <section className="bg-forest py-32 border-t border-ink/5 relative overflow-hidden">
+      <section className="bg-forest py-14 md:py-32 border-t border-ink/5 relative overflow-hidden">
         {/* Background abstract element */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-ink mix-blend-overlay opacity-20 blur-[150px]"></div>
 
@@ -240,7 +240,7 @@ const CompanyShowcase = () => {
                         />
                       )}
                       
-                      <h3 className={`text-4xl lg:text-[3.2rem] font-display font-bold uppercase transition-colors duration-500 tracking-tighter break-words ${
+                      <h3 className={`text-2xl md:text-4xl lg:text-[3.2rem] font-display font-bold uppercase transition-colors duration-500 tracking-tighter break-words ${
                         isActive ? "text-alabaster" : "text-alabaster/20"
                       }`}>
                         {tab.title}

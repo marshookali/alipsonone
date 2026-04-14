@@ -60,11 +60,11 @@ const OurCommitments = () => {
   ];
 
   return (
-    <section className="bg-alabaster py-32 md:py-48 relative overflow-hidden border-t border-ink/5">
+    <section className="bg-alabaster py-14 md:py-48 relative overflow-hidden border-t border-ink/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row gap-12 md:gap-24 mb-32 items-start">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-24 mb-12 md:mb-32 items-start">
           {/* Left Column (60%) */}
           <div className="w-full md:w-[60%] flex flex-col items-start gap-8">
             <div className="flex items-center gap-5">
@@ -73,7 +73,7 @@ const OurCommitments = () => {
                 Core Ethos
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-ink font-display leading-[1.05] uppercase">
+            <h2 className="text-3xl md:text-6xl lg:text-7xl font-bold text-ink font-display leading-[1.05] uppercase">
               Decisions <br className="hidden lg:block"/> With <span className="text-forest">Impact.</span>
             </h2>
           </div>

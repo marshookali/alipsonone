@@ -121,7 +121,7 @@ const Home = () => {
       </header>
 
       {/* 2. Concrete Proof Banner (Stats) - Redefined */}
-      <section className="bg-ink text-alabaster py-24 md:py-32 relative z-20">
+      <section className="bg-ink text-alabaster py-14 md:py-32 relative z-20">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-alabaster/10">
             {stats.map((stat, i) => (
@@ -131,7 +131,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-16 lg:py-12 bg-ink"
+                className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-10 lg:py-12 bg-ink"
               >
                 <span className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold text-terracotta mb-4 whitespace-nowrap tracking-tight">{stat.value}</span>
                 <span className="text-alabaster/60 font-body text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold">{stat.label}</span>
@@ -151,7 +151,7 @@ const Home = () => {
       <FeaturedProjects />
 
       {/* 3. Partner Marquee - Architecturally Styled */}
-      <section className="py-32 bg-ink overflow-hidden border-y border-alabaster/5 relative">
+      <section className="py-16 md:py-32 bg-ink overflow-hidden border-y border-alabaster/5 relative">
         {/* Background typographic watermark */}
         <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[18vw] font-display font-bold text-alabaster/[0.02] whitespace-nowrap select-none pointer-events-none uppercase tracking-tighter">
           Partners
@@ -160,7 +160,7 @@ const Home = () => {
         <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="lg:w-1/4 shrink-0 text-center lg:text-left flex flex-col items-center lg:items-start">
              <span className="w-12 h-px bg-terracotta inline-block mb-8"></span>
-             <h3 className="text-4xl md:text-5xl font-display font-bold text-alabaster uppercase tracking-tight">Our <br className="hidden lg:block"/> Network.</h3>
+             <h3 className="text-2xl md:text-4xl md:text-5xl font-display font-bold text-alabaster uppercase tracking-tight">Our <br className="hidden lg:block"/> Network.</h3>
              <p className="mt-6 text-alabaster/40 font-body text-sm max-w-xs mx-auto lg:mx-0 font-medium">Collaborating with trusted industry leaders to deliver uncompromising results.</p>
           </div>
 
@@ -186,7 +186,7 @@ const Home = () => {
       </section>
 
       {/* 4. Financing Callout - Breakout Grid Style */}
-      <section className="py-32 lg:py-48 bg-forest relative overflow-hidden">
+      <section className="py-16 lg:py-48 bg-forest relative overflow-hidden">
         {/* Abstract background shape */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-ink rounded-full blur-[150px] opacity-30 -translate-y-1/2 translate-x-1/3"></div>
 
@@ -214,14 +214,14 @@ const Home = () => {
       </section>
 
       {/* Intro to Services / Philosophy */}
-      <section className="py-40 md:py-56 bg-ink text-alabaster relative border-t border-alabaster/10">
+      <section className="py-16 md:py-56 bg-ink text-alabaster relative border-t border-alabaster/10">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            <ShieldCheck size={64} strokeWidth={1} className="text-terracotta mb-12" />
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-10 leading-[1.1] tracking-tighter uppercase text-forest">
+            <ShieldCheck size={40} strokeWidth={1} className="text-terracotta mb-6 md:mb-12 md:w-16 md:h-16" />
+            <h2 className="text-3xl md:text-7xl lg:text-8xl font-display font-bold mb-6 md:mb-10 leading-[1.1] tracking-tighter uppercase text-forest">
               Uncompromising <br/> <span>Integrity.</span>
             </h2>
-            <p className="text-alabaster/60 text-xl md:text-2xl font-body leading-relaxed mb-16 max-w-3xl font-light">
+            <p className="text-alabaster/60 text-base md:text-2xl font-body leading-relaxed mb-10 md:mb-16 max-w-3xl font-light">
               From initial groundwork to final finishing, our process is defined by meticulous attention to detail. True luxury lies in the foundation of trust we build with every client.
             </p>
             <Link
