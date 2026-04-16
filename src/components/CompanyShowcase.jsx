@@ -64,24 +64,24 @@ const CompanyShowcase = () => {
     <div className="w-full bg-alabaster">
       
       {/* 1. At A Glance (Bento Box Grid) */}
-      <section className="container mx-auto px-6 lg:px-12 py-12 md:py-32">
+      <section className="container mx-auto px-6 lg:px-12 py-8 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-ink/10 rounded-[2rem] overflow-hidden">
           
-          <div className="lg:col-span-2 border-r border-b border-ink/10 p-12 lg:p-20 flex items-center bg-alabaster">
+          <div className="lg:col-span-2 border-r border-b border-ink/10 p-8 md:p-12 lg:p-20 flex items-center bg-alabaster">
             <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink leading-[1.05] tracking-tighter uppercase">
               Company <br /> At a Glance.
             </h2>
           </div>
 
-          <div className="col-span-1 border-r border-b border-ink/10 p-10 lg:p-14 flex flex-col justify-between bg-white h-72 md:h-auto group hover:bg-forest transition-colors duration-500">
-            <span className="text-7xl font-display font-bold text-terracotta tracking-tight group-hover:text-alabaster transition-colors">16</span>
+          <div className="col-span-1 border-r border-b border-ink/10 p-8 md:p-10 lg:p-14 flex flex-col justify-between bg-white h-56 md:h-auto group hover:bg-forest transition-colors duration-500">
+            <span className="text-6xl md:text-7xl font-display font-bold text-terracotta tracking-tight group-hover:text-alabaster transition-colors">16</span>
             <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.2em] text-ink/70 mt-auto group-hover:text-alabaster/70 transition-colors">
               <span className="w-8 h-px bg-terracotta group-hover:bg-alabaster transition-colors inline-block"></span>
               National Offices
             </div>
           </div>
 
-          <div className="col-span-1 border-r border-b border-ink/10 relative bg-ink overflow-hidden h-72 md:h-auto min-h-[300px] group">
+          <div className="col-span-1 border-r border-b border-ink/10 relative bg-ink overflow-hidden h-56 md:h-auto min-h-[250px] md:min-h-[300px] group">
             <img 
               src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" 
               alt="Construction engineer" 
@@ -90,8 +90,8 @@ const CompanyShowcase = () => {
             />
           </div>
 
-          <div className="col-span-1 border-r border-b border-ink/10 p-10 lg:p-14 flex flex-col justify-between bg-ink h-72 md:h-auto min-h-[300px] group hover:bg-terracotta transition-colors duration-500">
-            <span className="text-7xl font-display font-bold text-alabaster tracking-tight">$10B</span>
+          <div className="col-span-1 border-r border-b border-ink/10 p-8 md:p-10 lg:p-14 flex flex-col justify-between bg-ink h-56 md:h-auto min-h-[250px] md:min-h-[300px] group hover:bg-terracotta transition-colors duration-500">
+            <span className="text-6xl md:text-7xl font-display font-bold text-alabaster tracking-tight">$10B</span>
             <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.2em] text-alabaster/60 mt-auto">
               <span className="w-8 h-px bg-alabaster/60 inline-block"></span>
               Annual Revenue
@@ -107,7 +107,7 @@ const CompanyShowcase = () => {
             />
           </div>
 
-          <div className="col-span-1 border-r border-b border-ink/10 p-10 lg:p-14 flex flex-col justify-between bg-alabaster h-72 md:h-auto min-h-[300px]">
+          <div className="col-span-1 border-r border-b border-ink/10 p-8 md:p-10 lg:p-14 flex flex-col justify-between bg-alabaster h-56 md:h-auto min-h-[250px] md:min-h-[300px]">
             <div className="w-full h-full flex items-center justify-center -mt-4">
               <div className="w-40 h-48 bg-forest flex flex-col items-center justify-center text-center p-6 shadow-2xl">
                 <span className="text-alabaster font-display font-bold text-2xl leading-[1.1] mb-4 uppercase">Great <br/> Place <br/> To <br/> Work</span>
@@ -129,16 +129,16 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 2. How We Build */}
-      <section className="bg-alabaster py-12 md:py-24 pb-16 md:pb-48">
+      <section className="bg-alabaster py-8 md:py-24 pb-8 md:pb-48">
         <div className="container mx-auto px-6 lg:px-12">
           
-          <div className="bg-white rounded-[2rem] border border-ink/5 p-10 md:p-16 lg:p-20 shadow-xl relative mt-10">
+          <div className="bg-white rounded-[2rem] border border-ink/5 p-6 md:p-16 lg:p-20 shadow-xl relative mt-4 md:mt-10">
 
             <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-8">
               <span className="w-8 h-px bg-terracotta inline-block"></span>
               The System
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink mb-10 md:mb-20 tracking-tighter uppercase">How we build.</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink mb-6 md:mb-20 tracking-tighter uppercase">How we build.</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
               
@@ -151,7 +151,7 @@ const CompanyShowcase = () => {
                       key={idx}
                       onClick={() => setActiveHowWeBuild(idx)}
                       onMouseEnter={() => setActiveHowWeBuild(idx)}
-                      className={`relative text-left py-6 flex flex-col gap-2 transition-all duration-500`}
+                      className={`relative text-left py-4 md:py-6 flex flex-col gap-2 transition-all duration-500`}
                     >
                       <span className={`font-display font-bold text-2xl tracking-wide uppercase transition-colors ${isActive ? 'text-ink' : 'text-ink/30'}`}>
                         {tab.title}
@@ -168,7 +168,7 @@ const CompanyShowcase = () => {
               </div>
 
               {/* Right Side: Image + Desc */}
-              <div className="lg:col-span-8 flex flex-col md:flex-row gap-10 items-center bg-alabaster rounded-3xl p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
+              <div className="lg:col-span-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center bg-alabaster rounded-3xl p-4 md:p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
                 <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden rounded-2xl bg-ink shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.img
@@ -211,20 +211,20 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 3. What We Build */}
-      <section className="bg-forest py-14 md:py-32 border-t border-ink/5 relative overflow-hidden">
+      <section className="bg-forest py-6 md:py-20 border-t border-ink/5 relative overflow-hidden">
         {/* Background abstract element */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-ink mix-blend-overlay opacity-20 blur-[150px]"></div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 rounded-[2rem] overflow-hidden">
             
-            <div className="p-10 lg:p-24 flex flex-col justify-center bg-ink border border-ink/20 z-20">
-              <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-16">
+            <div className="p-6 md:p-16 flex flex-col justify-center bg-ink border border-ink/20 z-20">
+              <div className="flex items-center gap-4 uppercase text-[10px] font-body font-bold tracking-[0.3em] text-terracotta mb-6 md:mb-10">
                 <span className="w-8 h-px bg-terracotta inline-block"></span>
                 What We Build
               </div>
 
-              <div className="flex flex-col gap-6 mb-20 relative">
+              <div className="flex flex-col gap-4 mb-12 relative">
                 {whatWeBuildTabs.map((tab, idx) => {
                   const isActive = activeWhatWeBuild === idx;
                   return (
@@ -250,7 +250,7 @@ const CompanyShowcase = () => {
                 })}
               </div>
 
-              <div className="h-40">
+              <div className="h-32">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeWhatWeBuild}
@@ -271,7 +271,7 @@ const CompanyShowcase = () => {
               </div>
             </div>
 
-            <div className="relative h-[500px] lg:h-auto w-full overflow-hidden z-10">
+            <div className="relative h-[300px] md:h-auto w-full overflow-hidden z-10">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeWhatWeBuild}

@@ -8,64 +8,64 @@ const Instagram = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" heigh
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-800">
+    <footer className="bg-ink text-alabaster pt-20 pb-10 border-t border-alabaster/10 font-body">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           {/* Brand & Overview */}
           <div className="space-y-6">
-            <Link to="/" className="text-2xl font-serif tracking-tight font-bold text-white block">
+            <Link to="/" className="text-2xl font-display tracking-tight font-bold text-alabaster block">
               ALIPSON
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-alabaster/60 text-sm leading-relaxed">
               Premium commercial and residential construction services in New York. 
               Delivering excellence, integrity, and innovation to every project we build.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="Facebook"><Facebook /></a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="Twitter"><Twitter /></a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin /></a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="Instagram"><Instagram /></a>
+              <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Facebook"><Facebook /></a>
+              <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Twitter"><Twitter /></a>
+              <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="LinkedIn"><Linkedin /></a>
+              <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Instagram"><Instagram /></a>
             </div>
           </div>
 
           {/* Contact (NAP) */}
           <div className="space-y-6">
-            <h3 className="text-white font-serif text-lg tracking-wide">Contact Us</h3>
+            <h3 className="text-alabaster font-display text-lg tracking-wide uppercase">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-amber-500 shrink-0 mt-0.5" />
-                <span>123 Construction Avenue<br/>Suite 400<br/>New York, NY 10001</span>
+                <MapPin size={18} className="text-terracotta shrink-0 mt-0.5" />
+                <span className="text-alabaster/80">123 Construction Avenue<br/>Suite 400<br/>New York, NY 10001</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-amber-500 shrink-0" />
-                <span>(555) 123-4567</span>
+                <Phone size={18} className="text-terracotta shrink-0" />
+                <span className="text-alabaster/80">(555) 123-4567</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-amber-500 shrink-0" />
-                <span>info@alipsonone.com</span>
+                <Mail size={18} className="text-terracotta shrink-0" />
+                <span className="text-alabaster/80">info@alipsonone.com</span>
               </li>
             </ul>
           </div>
 
           {/* Quick Links & Hours */}
           <div className="space-y-6">
-            <h3 className="text-white font-serif text-lg tracking-wide">Quick Links</h3>
+            <h3 className="text-alabaster font-display text-lg tracking-wide uppercase">Quick Links</h3>
             <nav aria-label="Footer navigation">
             <ul className="space-y-3 text-sm flex-col flex">
-              <Link to="/portfolio" className="hover:text-amber-500 transition-colors inline-block w-fit">Our Portfolio</Link>
-              <Link to="/about" className="hover:text-amber-500 transition-colors inline-block w-fit">Company Story</Link>
-              <Link to="/insights" className="hover:text-amber-500 transition-colors inline-block w-fit">Industry Insights</Link>
-              <Link to="/contact" className="hover:text-amber-500 transition-colors inline-block w-fit">Request a Quote</Link>
+              <Link to="/portfolio" className="text-alabaster/80 hover:text-terracotta transition-colors inline-block w-fit">Our Portfolio</Link>
+              <Link to="/about" className="text-alabaster/80 hover:text-terracotta transition-colors inline-block w-fit">Company Story</Link>
+              <Link to="/insights" className="text-alabaster/80 hover:text-terracotta transition-colors inline-block w-fit">Industry Insights</Link>
+              <Link to="/contact" className="text-alabaster/80 hover:text-terracotta transition-colors inline-block w-fit">Request a Quote</Link>
             </ul>
             </nav>
-            <div className="pt-4 space-y-3 text-sm border-t border-slate-800">
+            <div className="pt-4 space-y-3 text-sm border-t border-alabaster/10">
               <div className="flex items-start gap-3">
-                <Clock size={18} className="text-amber-500 shrink-0" />
+                <Clock size={18} className="text-terracotta shrink-0" />
                 <div>
-                  <p className="text-white mb-1">Business Hours</p>
-                  <p className="text-slate-400">Mon - Fri: 8:00 AM - 6:00 PM</p>
-                  <p className="text-slate-400">Sat - Sun: Closed</p>
+                  <p className="text-alabaster mb-1 font-bold">Business Hours</p>
+                  <p className="text-alabaster/60">Mon - Fri: 8:00 AM - 6:00 PM</p>
+                  <p className="text-alabaster/60">Sat - Sun: Closed</p>
                 </div>
               </div>
             </div>
@@ -73,27 +73,27 @@ const Footer = () => {
 
           {/* Location Map Placeholder */}
           <div className="space-y-6">
-            <h3 className="text-white font-serif text-lg tracking-wide">Our Location</h3>
-            <div className="w-full h-48 bg-slate-800 rounded flex items-center justify-center overflow-hidden relative group">
-              <div className="absolute inset-0 bg-slate-900/50 group-hover:bg-transparent transition-colors z-10"></div>
+            <h3 className="text-alabaster font-display text-lg tracking-wide uppercase">Our Location</h3>
+            <div className="w-full h-48 bg-alabaster/5 rounded flex items-center justify-center overflow-hidden relative group border border-alabaster/10">
+              <div className="absolute inset-0 bg-ink/70 group-hover:bg-ink/40 transition-colors duration-500 z-10"></div>
               {/* This would be an iframe for Google Maps in production */}
               <div className="z-20 flex flex-col items-center justify-center text-center p-4">
-                <MapPin size={32} className="text-amber-500 mb-2" />
-                <span className="text-sm font-medium">New York Headquarters</span>
-                <span className="text-xs text-slate-400 mt-1 hover:underline cursor-pointer">View on Google Maps</span>
+                <MapPin size={32} className="text-terracotta mb-2" />
+                <span className="text-sm font-medium text-alabaster">New York Headquarters</span>
+                <span className="text-xs text-alabaster/60 mt-1 hover:text-terracotta transition-colors cursor-pointer capitalize">View on Google Maps</span>
               </div>
               {/* Pseudo Map Background */}
-              <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center"></div>
+              <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')] bg-cover bg-center mix-blend-luminosity"></div>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-alabaster/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-alabaster/40 font-body">
           <p>&copy; {new Date().getFullYear()} AlipsonOne Construction. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-slate-300">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-300">Terms of Service</a>
-            <a href="#" className="hover:text-slate-300">Sitemap</a>
+            <a href="#" className="hover:text-alabaster transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-alabaster transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-alabaster transition-colors">Sitemap</a>
           </div>
         </div>
       </div>

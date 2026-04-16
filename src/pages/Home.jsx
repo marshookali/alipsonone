@@ -1,5 +1,6 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 import { ArrowRight, ShieldCheck, BadgePercent, ArrowDownRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AboutUs from '../components/AboutUs';
@@ -13,6 +14,48 @@ const stats = [
   { value: "25+", label: "Years of Excellence" },
   { value: "0", label: "Safety Incidents" }
 ];
+
+const AnimatedStat = ({ stat, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [displayValue, setDisplayValue] = useState("0");
+  
+  const match = stat.value.match(/^(\D*)(\d+)(\D*)$/);
+  const prefix = match ? match[1] : "";
+  const numericValue = match ? parseInt(match[2], 10) : null;
+  const suffix = match ? match[3] : stat.value;
+
+  useEffect(() => {
+    if (isInView && numericValue !== null) {
+      const startValue = numericValue === 0 ? 100 : 0;
+      const controls = animate(startValue, numericValue, {
+        duration: 2,
+        delay: index * 0.1,
+        ease: "easeOut",
+        onUpdate(value) {
+          setDisplayValue(Math.floor(value).toString());
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, numericValue, index]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-10 lg:py-12 bg-ink"
+    >
+      <span className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold text-terracotta mb-4 whitespace-nowrap tracking-tight">
+        {numericValue !== null ? <>{prefix}{displayValue}{suffix}</> : stat.value}
+      </span>
+      <span className="text-alabaster/60 font-body text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold">{stat.label}</span>
+    </motion.div>
+  );
+};
 
 const Home = () => {
   return (
@@ -43,10 +86,10 @@ const Home = () => {
               We leverage decades of expertise and master craftsmanship to deliver uncompromising commercial and residential spaces.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
               <Link
                 to="/portfolio"
-                className="group relative overflow-hidden bg-ink text-alabaster px-8 py-5 rounded-full font-display font-semibold tracking-wide uppercase transition-all duration-300 hover:text-white flex items-center justify-center sm:justify-start"
+                className="group relative overflow-hidden bg-ink text-alabaster px-6 py-4 rounded-full font-display font-semibold tracking-wide uppercase transition-all duration-300 hover:text-white inline-flex items-center justify-center sm:justify-start w-fit"
               >
                 <span className="absolute inset-0 w-full h-full bg-terracotta translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1] z-0"></span>
                 <span className="relative z-10 flex items-center gap-3">
@@ -125,17 +168,7 @@ const Home = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-alabaster/10">
             {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-center justify-center text-center px-4 md:px-8 py-10 lg:py-12 bg-ink"
-              >
-                <span className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-display font-bold text-terracotta mb-4 whitespace-nowrap tracking-tight">{stat.value}</span>
-                <span className="text-alabaster/60 font-body text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold">{stat.label}</span>
-              </motion.div>
+              <AnimatedStat key={stat.label} stat={stat} index={i} />
             ))}
           </div>
         </div>
