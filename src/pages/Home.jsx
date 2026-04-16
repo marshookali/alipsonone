@@ -23,10 +23,10 @@ const Home = () => {
       </Helmet>
 
       {/* 1. Bespoke Asymmetrical Hero Section */}
-      <header className="relative w-full min-h-screen flex flex-col lg:flex-row pt-20 lg:pt-0">
+      <header className="relative w-full lg:min-h-screen flex flex-col lg:flex-row pt-16 lg:pt-0">
         
         {/* Left Column: Typography & Content */}
-        <div className="w-full lg:w-[45%] flex flex-col justify-center pl-4 pr-6 lg:pl-10 lg:pr-16 xl:pl-12 xl:pr-24 z-20 bg-alabaster py-20 lg:py-0 relative">
+        <div className="w-full lg:w-[45%] flex flex-col justify-start lg:justify-center pl-4 pr-6 lg:pl-10 lg:pr-16 xl:pl-12 xl:pr-24 z-20 bg-alabaster pt-6 pb-8 lg:py-0 relative">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

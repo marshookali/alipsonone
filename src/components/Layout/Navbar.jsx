@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <>
       <header className={navbarClasses}>
-        <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+        <div className="container mx-auto px-6 lg:pl-6 lg:pr-12 flex justify-between items-center">
           <Link 
             to="/" 
             className={cn(
