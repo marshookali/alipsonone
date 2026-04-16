@@ -140,8 +140,8 @@ const CompanyShowcase = () => {
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink mb-6 md:mb-20 tracking-tighter uppercase">How we build.</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-start">
-              
+            {/* Desktop Layout: Tabbed Interface (Visible from lg up) */}
+            <div className="hidden lg:grid lg:grid-cols-12 gap-12 items-start">
               {/* Left Nav */}
               <div className="lg:col-span-4 flex flex-col gap-0 border-l px-6 border-ink/10">
                 {howWeBuildTabs.map((tab, idx) => {
@@ -151,7 +151,7 @@ const CompanyShowcase = () => {
                       key={idx}
                       onClick={() => setActiveHowWeBuild(idx)}
                       onMouseEnter={() => setActiveHowWeBuild(idx)}
-                      className={`relative text-left py-4 md:py-6 flex flex-col gap-2 transition-all duration-500`}
+                      className={`relative text-left py-6 flex flex-col gap-2 transition-all duration-500`}
                     >
                       <span className={`font-display font-bold text-2xl tracking-wide uppercase transition-colors ${isActive ? 'text-ink' : 'text-ink/30'}`}>
                         {tab.title}
@@ -168,7 +168,7 @@ const CompanyShowcase = () => {
               </div>
 
               {/* Right Side: Image + Desc */}
-              <div className="lg:col-span-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center bg-alabaster rounded-3xl p-4 md:p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
+              <div className="lg:col-span-8 flex flex-col md:flex-row gap-10 items-center bg-alabaster rounded-3xl p-8 border border-ink/5 relative lg:-translate-y-10 shadow-2xl">
                 <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-hidden rounded-2xl bg-ink shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.img
@@ -204,7 +204,33 @@ const CompanyShowcase = () => {
                   </AnimatePresence>
                 </div>
               </div>
+            </div>
 
+            {/* Mobile Layout: Repeated Blocks (Visible below lg) */}
+            <div className="lg:hidden flex flex-col gap-12">
+              {howWeBuildTabs.map((tab, idx) => (
+                <div key={idx} className="flex flex-col gap-6">
+                  <h3 className="font-display font-bold text-2xl tracking-wide uppercase text-ink">
+                    {tab.title}
+                  </h3>
+                  <div className="relative w-full aspect-video overflow-hidden rounded-2xl bg-ink">
+                    <img
+                      src={tab.img}
+                      alt={tab.title}
+                      className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-90"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-6">
+                    <p className="text-base text-ink/80 leading-relaxed font-body font-medium">
+                      {tab.desc}
+                    </p>
+                    <Link to="/about" className="uppercase text-[11px] font-bold font-body tracking-[0.2em] text-ink flex items-center gap-4 group hover:text-terracotta transition-colors">
+                      {tab.linkText} 
+                      <ArrowRight size={14} className="transition-transform group-hover:translate-x-2" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
