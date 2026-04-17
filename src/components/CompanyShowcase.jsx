@@ -276,7 +276,7 @@ const CompanyShowcase = () => {
                 })}
               </div>
 
-              <div className="h-32">
+              <div className="min-h-[180px] md:min-h-[140px] lg:h-32">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeWhatWeBuild}
