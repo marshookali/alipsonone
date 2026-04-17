@@ -63,9 +63,72 @@ const CompanyShowcase = () => {
   return (
     <div className="w-full bg-alabaster">
       
-      {/* 1. At A Glance (Bento Box Grid) */}
+      {/* 1. At A Glance */}
       <section className="container mx-auto px-6 lg:px-12 py-8 md:py-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-ink/10 rounded-[2rem] overflow-hidden">
+
+        {/* ── MOBILE LAYOUT: horizontal snap carousel ── */}
+        <div className="md:hidden">
+          {/* Section header */}
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-6 h-px bg-terracotta inline-block" />
+              <span className="text-terracotta font-body font-bold text-[10px] uppercase tracking-[0.3em]">Company</span>
+            </div>
+            <h2 className="text-3xl font-display font-bold text-ink tracking-tighter uppercase leading-[1.05]">
+              At a Glance.
+            </h2>
+          </div>
+
+          {/* Horizontal scroll strip */}
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide">
+
+            {/* Card 1 – National Offices */}
+            <div className="snap-start shrink-0 w-[48vw] max-w-[190px] rounded-2xl bg-white border border-ink/8 shadow-md p-5 flex flex-col justify-between min-h-[150px]">
+              <span className="text-5xl font-display font-bold text-terracotta tracking-tight leading-none">16</span>
+              <div>
+                <span className="block w-6 h-px bg-terracotta mb-2" />
+                <p className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-ink/60">National Offices</p>
+              </div>
+            </div>
+
+            {/* Card 2 – Annual Revenue */}
+            <div className="snap-start shrink-0 w-[48vw] max-w-[190px] rounded-2xl bg-ink shadow-md p-5 flex flex-col justify-between min-h-[150px]">
+              <span className="text-5xl font-display font-bold text-alabaster tracking-tight leading-none">$10B</span>
+              <div>
+                <span className="block w-6 h-px bg-alabaster/40 mb-2" />
+                <p className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-alabaster/60">Annual Revenue</p>
+              </div>
+            </div>
+
+            {/* Card 3 – Great Place To Work */}
+            <div className="snap-start shrink-0 w-[48vw] max-w-[190px] rounded-2xl bg-forest shadow-md p-5 flex flex-col items-start justify-between min-h-[150px]">
+              <span className="text-terracotta font-body text-[10px] font-bold tracking-widest uppercase">Certified</span>
+              <p className="text-alabaster font-display font-bold text-xl uppercase leading-tight">Great Place To Work</p>
+            </div>
+
+            {/* Card 4 – Image card */}
+            <div className="snap-start shrink-0 w-[48vw] max-w-[190px] rounded-2xl overflow-hidden shadow-md relative min-h-[150px] bg-ink">
+              <img
+                src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Modern construction building"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+            </div>
+
+          </div>
+
+          {/* Scroll hint dots */}
+          <div className="flex justify-center gap-1.5 mt-4">
+            {[0,1,2,3].map(i => (
+              <span key={i} className={`block rounded-full transition-all ${i === 0 ? 'w-4 h-1.5 bg-terracotta' : 'w-1.5 h-1.5 bg-ink/20'}`} />
+            ))}
+          </div>
+        </div>
+
+        {/* ── DESKTOP LAYOUT: original bento grid ── */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 border border-ink/10 rounded-[2rem] overflow-hidden">
           
           <div className="lg:col-span-2 border-r border-b border-ink/10 p-8 md:p-12 lg:p-20 flex items-center bg-alabaster">
             <h2 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-ink leading-[1.05] tracking-tighter uppercase">
@@ -127,6 +190,7 @@ const CompanyShowcase = () => {
 
         </div>
       </section>
+
 
       {/* 2. How We Build */}
       <section className="bg-alabaster py-8 md:py-24 pb-8 md:pb-48">
