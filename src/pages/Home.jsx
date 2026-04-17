@@ -259,7 +259,7 @@ const Home = () => {
             </p>
             <Link
               to="/portfolio"
-              className="group text-terracotta font-display font-bold tracking-[0.2em] uppercase transition-colors flex items-center gap-6 relative overflow-hidden text-lg"
+              className="group text-terracotta font-display font-bold tracking-[0.2em] uppercase transition-colors flex items-center justify-center gap-6 relative overflow-hidden text-lg text-center"
             >
               <span>View Our Capability</span>
               <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform duration-300" />
