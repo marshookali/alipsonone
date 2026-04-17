@@ -46,15 +46,15 @@ const Navbar = () => {
   return (
     <>
       <header className={navbarClasses}>
-        <div className="container mx-auto px-6 lg:pl-6 lg:pr-12 flex justify-between items-center">
+        <div className="container mx-auto px-6 lg:pl-0 lg:pr-12 flex justify-between items-center">
           <Link 
             to="/" 
             className={cn(
-              "text-2xl font-serif tracking-tight font-bold transition-colors duration-300",
+              "text-2xl font-serif tracking-tight font-bold transition-colors duration-300 whitespace-nowrap flex items-center lg:-ml-8",
               isHome && !isScrolled && !mobileMenuOpen ? "text-slate-950" : "text-slate-50"
             )}
           >
-            ALIPSON<span className="text-amber-500"></span>
+            ALIPSON
           </Link>
 
           {/* Desktop Nav */}

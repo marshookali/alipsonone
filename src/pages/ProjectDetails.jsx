@@ -29,7 +29,7 @@ const ProjectDetails = () => {
   return (
     <div className="w-full bg-white relative">
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px] w-full flex items-end pb-24">
+      <section className="relative h-[75vh] min-h-[550px] w-full flex flex-col pt-28 pb-20 md:pb-32">
         <div className="absolute inset-0 bg-slate-900">
           <img 
             src={project.image} 
@@ -39,8 +39,8 @@ const ProjectDetails = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-6 lg:px-12 text-white">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm tracking-widest uppercase text-white/70 hover:text-white mb-8 transition-colors">
+        <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col h-full justify-between text-white">
+          <Link to="/" className="inline-flex items-center gap-2 text-sm tracking-widest uppercase text-white/70 hover:text-white transition-colors w-fit">
             <ArrowLeft size={16} />
             Back to Home
           </Link>
@@ -48,11 +48,12 @@ const ProjectDetails = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="max-w-4xl"
           >
             <span className="text-amber-500 font-sans tracking-[0.2em] font-medium text-sm md:text-base uppercase mb-4 block">
               {project.category}
             </span>
-            <h1 className="text-5xl md:text-7xl font-serif leading-tight max-w-4xl">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] text-white/70">
               {project.title}
             </h1>
           </motion.div>

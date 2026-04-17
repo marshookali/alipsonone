@@ -14,8 +14,8 @@ const Footer = () => {
           
           {/* Brand & Overview */}
           <div className="space-y-6">
-            <Link to="/" className="text-2xl font-display tracking-tight font-bold text-alabaster block">
-              ALIPSON
+            <Link to="/" className="text-2xl font-display tracking-tight font-bold text-alabaster block whitespace-nowrap">
+              ALIPSON<span className="text-terracotta">ONE</span>
             </Link>
             <p className="text-alabaster/60 text-sm leading-relaxed">
               Premium commercial and residential construction services in New York. 
