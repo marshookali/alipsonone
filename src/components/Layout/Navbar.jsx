@@ -49,12 +49,20 @@ const Navbar = () => {
         <div className="container mx-auto px-6 lg:pl-0 lg:pr-12 flex justify-between items-center">
           <Link 
             to="/" 
-            className={cn(
-              "text-2xl font-serif tracking-tight font-bold transition-colors duration-300 whitespace-nowrap flex items-center lg:-ml-8",
-              isHome && !isScrolled && !mobileMenuOpen ? "text-slate-950" : "text-slate-50"
-            )}
+            className="flex items-center lg:-ml-8"
+            aria-label="Alipson Home"
           >
-            ALIPSON
+            <img
+              src="https://alipsonbuliders.com/wp-content/uploads/2025/10/cropped-alipson.png"
+              alt="Alipson Builders"
+              width={120}
+              height={44}
+              className={cn(
+                "h-12 w-auto object-contain brightness-0 transition-all duration-300",
+                isHome && !isScrolled && !mobileMenuOpen ? "" : "invert"
+              )}
+              fetchpriority="high"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -102,6 +110,15 @@ const Navbar = () => {
         "fixed inset-0 bg-slate-950 z-50 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden",
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       )}>
+        <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="Alipson Home">
+          <img
+            src="https://alipsonbuliders.com/wp-content/uploads/2025/10/cropped-alipson.png"
+            alt="Alipson Builders"
+            width={140}
+            height={52}
+            className="h-10 w-auto object-contain brightness-0 invert mb-4"
+          />
+        </Link>
         <ul className="flex flex-col items-center gap-6">
           {navLinks.map((link) => (
             <li key={`mobile-${link.name}`}>

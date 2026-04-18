@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,29 @@ const CompanyShowcase = () => {
   const [activeHowWeBuild, setActiveHowWeBuild] = useState(0);
   // State for 'What We Build'
   const [activeWhatWeBuild, setActiveWhatWeBuild] = useState(0);
+  // State for 'At A Glance' mobile carousel
+  const [activeGlance, setActiveGlance] = useState(0);
+  const glanceCarouselRef = useRef(null);
+
+  useEffect(() => {
+    const el = glanceCarouselRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      const scrollLeft = el.scrollLeft;
+      const cardWidth = el.scrollWidth / 4; // 4 cards
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveGlance(Math.min(index, 3));
+    };
+    el.addEventListener('scroll', handleScroll, { passive: true });
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToGlanceCard = (index) => {
+    const el = glanceCarouselRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / 4;
+    el.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+  };
 
   const howWeBuildTabs = [
     {
@@ -64,7 +87,7 @@ const CompanyShowcase = () => {
     <div className="w-full bg-alabaster">
       
       {/* 1. At A Glance */}
-      <section className="container mx-auto px-6 lg:px-12 py-8 md:py-32">
+      <section className="container mx-auto px-6 lg:px-12 py-8 md:pt-12 md:pb-32">
 
         {/* ── MOBILE LAYOUT: horizontal snap carousel ── */}
         <div className="md:hidden">
@@ -80,7 +103,7 @@ const CompanyShowcase = () => {
           </div>
 
           {/* Horizontal scroll strip */}
-          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide">
+          <div ref={glanceCarouselRef} className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 scrollbar-hide">
 
             {/* Card 1 – National Offices */}
             <div className="snap-start shrink-0 w-[48vw] max-w-[190px] rounded-2xl bg-white border border-ink/8 shadow-md p-5 flex flex-col justify-between min-h-[150px]">
@@ -122,7 +145,14 @@ const CompanyShowcase = () => {
           {/* Scroll hint dots */}
           <div className="flex justify-center gap-1.5 mt-4">
             {[0,1,2,3].map(i => (
-              <span key={i} className={`block rounded-full transition-all ${i === 0 ? 'w-4 h-1.5 bg-terracotta' : 'w-1.5 h-1.5 bg-ink/20'}`} />
+              <button
+                key={i}
+                onClick={() => scrollToGlanceCard(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`block rounded-full transition-all duration-300 ${
+                  i === activeGlance ? 'w-4 h-1.5 bg-terracotta' : 'w-1.5 h-1.5 bg-ink/20'
+                }`}
+              />
             ))}
           </div>
         </div>

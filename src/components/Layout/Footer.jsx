@@ -14,8 +14,15 @@ const Footer = () => {
           
           {/* Brand & Overview */}
           <div className="space-y-6">
-            <Link to="/" className="text-2xl font-display tracking-tight font-bold text-alabaster block whitespace-nowrap">
-              ALIPSON
+            <Link to="/" aria-label="Alipson Home" className="block w-fit">
+              <img
+                src="https://alipsonbuliders.com/wp-content/uploads/2025/10/cropped-alipson.png"
+                alt="Alipson Builders"
+                width={140}
+                height={52}
+                className="h-12 w-auto object-contain brightness-0 invert"
+                loading="lazy"
+              />
             </Link>
             <p className="text-alabaster/60 text-sm leading-relaxed">
               Premium commercial and residential construction services in New York. 
@@ -25,7 +32,7 @@ const Footer = () => {
               <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Facebook"><Facebook /></a>
               <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Twitter"><Twitter /></a>
               <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="LinkedIn"><Linkedin /></a>
-              <a href="#" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Instagram"><Instagram /></a>
+              <a href="https://www.instagram.com/alipsonbuilders/" target="_blank" rel="noopener noreferrer" className="text-alabaster/60 hover:text-terracotta transition-colors" aria-label="Instagram"><Instagram /></a>
             </div>
           </div>
 

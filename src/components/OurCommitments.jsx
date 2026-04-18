@@ -60,7 +60,7 @@ const OurCommitments = () => {
   ];
 
   return (
-    <section className="bg-alabaster py-14 md:py-48 relative overflow-hidden border-t border-ink/5">
+    <section className="bg-alabaster py-14 md:pt-24 md:pb-16 relative overflow-hidden border-t border-ink/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Top Section */}
