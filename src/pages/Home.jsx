@@ -219,18 +219,18 @@ const Home = () => {
       </section>
 
       {/* 4. Financing Callout - Breakout Grid Style */}
-      <section className="py-16 lg:py-48 bg-forest relative overflow-hidden">
+      <section className="py-8 lg:py-48 bg-forest relative overflow-hidden">
         {/* Abstract background shape */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-ink rounded-full blur-[150px] opacity-30 -translate-y-1/2 translate-x-1/3"></div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="bg-alabaster shadow-2xl p-0 flex flex-col md:flex-row transform lg:-rotate-2 lg:hover:rotate-0 transition-transform duration-700 ease-out max-w-6xl mx-auto rounded-[2rem] overflow-hidden">
-            <div className="bg-terracotta text-alabaster p-12 lg:p-16 md:w-2/5 flex flex-col items-start justify-center">
+            <div className="bg-terracotta text-alabaster p-8 lg:p-16 md:w-2/5 flex flex-col items-start justify-center">
               <BadgePercent size={64} className="mb-8 opacity-80" strokeWidth={1} />
-              <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">Capital Solutions.</h2>
+              <h2 className="text-3xl lg:text-5xl font-display font-bold mb-3">Capital Solutions.</h2>
             </div>
-            <div className="p-12 lg:p-20 md:w-3/5 flex flex-col justify-center">
-              <p className="text-ink text-xl lg:text-2xl leading-relaxed font-body mb-10 max-w-xl font-medium">
+            <div className="p-8 lg:p-20 md:w-3/5 flex flex-col justify-center">
+              <p className="text-ink text-base lg:text-2xl leading-relaxed font-body mb-7 max-w-xl font-medium">
                 Remove the friction from your next big project. We partner with top-tier financial institutions to offer tailored financing solutions with competitive rates and flexible terms.
               </p>
               <div>
