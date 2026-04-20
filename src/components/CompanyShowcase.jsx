@@ -223,6 +223,7 @@ const CompanyShowcase = () => {
 
 
       {/* 2. How We Build */}
+      
       <section className="bg-alabaster py-8 md:py-24 pb-8 md:pb-48">
         <div className="container mx-auto px-6 lg:px-12">
           
@@ -331,7 +332,7 @@ const CompanyShowcase = () => {
       </section>
 
       {/* 3. What We Build */}
-      <section className="bg-forest py-6 md:py-20 border-t border-ink/5 relative overflow-hidden">
+      <section className="py-6 md:py-20 border-t border-ink/5 relative overflow-hidden">
         {/* Background abstract element */}
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-ink mix-blend-overlay opacity-20 blur-[150px]"></div>
 

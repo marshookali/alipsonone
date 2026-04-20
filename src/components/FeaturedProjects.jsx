@@ -15,7 +15,7 @@ const ProjectCard = ({ project, index }) => (
     transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     className="group relative"
   >
-    <Link to={`/projects/${project.id}`} className="block overflow-hidden relative aspect-[3/4] bg-ink">
+    <Link to={`/projects/${project.id}`} className="block overflow-hidden relative aspect-[3/4] bg-ink rounded-3xl">
       <div className="absolute inset-0 bg-ink/40 group-hover:bg-ink/10 transition-colors duration-700 z-10 mix-blend-multiply" />
       <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-ink via-ink/40 to-transparent z-10" />
       <img

@@ -163,7 +163,7 @@ export const projectsData = [
     id: "pinnacle-sports-arena",
     title: "Pinnacle Sports Arena",
     category: "Sports & Recreation",
-    image: "https://images.unsplash.com/photo-1540747913346-19212a4d31e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
     description: "A world-class multi-purpose arena accommodating 35,000 spectators. Designed for year-round use across sporting events, concerts, and conventions, featuring retractable roof technology and cutting-edge acoustic engineering.",
     client: "Metro Sports Authority",
     location: "Sports District",
