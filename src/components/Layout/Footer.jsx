@@ -8,7 +8,7 @@ const Instagram = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" heigh
 
 const Footer = () => {
   return (
-    <footer className="bg-ink text-alabaster pt-20 pb-10 border-t border-alabaster/10 font-body">
+    <footer className="bg-ink text-alabaster pt-20 pb-10 font-body">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           

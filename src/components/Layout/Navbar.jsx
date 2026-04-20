@@ -34,7 +34,7 @@ const Navbar = () => {
   const navbarClasses = cn(
     'fixed top-0 left-0 right-0 z-[60] transition-all duration-500 py-4',
     isScrolled || mobileMenuOpen 
-      ? 'bg-ink/30 backdrop-blur-xl border-b border-white/10 shadow-lg backdrop-saturate-150 py-4' 
+      ? 'bg-ink/30 backdrop-blur-xl shadow-lg backdrop-saturate-150 py-4' 
       : !isHome ? 'bg-ink py-6' : 'bg-transparent py-6'
   );
 

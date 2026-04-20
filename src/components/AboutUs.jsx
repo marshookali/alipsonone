@@ -9,7 +9,7 @@ const stats = [
 
 const AboutUs = () => {
   return (
-    <section className="bg-alabaster relative z-20 border-t border-ink/5">
+    <section className="bg-alabaster relative z-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32">
         {/* Section 1: The Narrative */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
