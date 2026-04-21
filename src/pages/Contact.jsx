@@ -50,7 +50,7 @@ const Contact = () => {
       </Helmet>
       
       {/* Background purely for aesthetic split */}
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[600px] lg:h-full bg-slate-900 -z-10 hidden lg:block" />
+      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-[600px] lg:h-full bg-ink -z-10 hidden lg:block" />
 
       <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row shadow-2xl rounded-sm overflow-hidden bg-white mt-10">
         
@@ -154,9 +154,9 @@ const Contact = () => {
         </div>
 
         {/* Right Side: Reputation Management / Testimonials */}
-        <div className="w-full lg:w-1/2 bg-slate-900 text-white p-10 md:p-16 lg:p-20 order-1 lg:order-2 flex flex-col justify-center">
+        <div className="w-full lg:w-1/2 bg-ink text-alabaster p-10 md:p-16 lg:p-20 order-1 lg:order-2 flex flex-col justify-center">
           <div className="mb-12">
-            <h2 className="text-3xl font-serif mb-4">A Reputation Built on Trust</h2>
+            <h2 className="text-3xl font-serif mb-4 text-alabaster">A Reputation Built on Trust</h2>
             <p className="text-slate-400 font-sans leading-relaxed">
               We don't just build structures; we build enduring relationships. Our track record is validated by the industry leaders who trust us with their most critical developments.
             </p>
@@ -192,7 +192,7 @@ const Contact = () => {
           {/* Third-party review badge placeholder (Google) */}
           <div className="mt-16 pt-8 border-t border-slate-800 flex items-center gap-4">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="max-w-full" />
+              <img src="https://www.gstatic.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google" className="max-w-full" />
             </div>
             <div>
               <span className="block text-sm font-medium">4.9 / 5.0 Rating</span>

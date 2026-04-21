@@ -91,12 +91,12 @@ const About = () => {
       </section>
 
       {/* Team Grid */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-ink text-alabaster">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <span className="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3 block">Leadership</span>
-          <h2 className="text-4xl font-serif mb-16 text-white">The Visionaries Behind the Builds</h2>
+          <h2 className="text-4xl font-serif mb-16 text-alabaster">The Visionaries Behind the Builds</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto">
             {team.map((member, i) => (
               <motion.div 
                 key={member.name}
@@ -106,15 +106,15 @@ const About = () => {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="group text-left"
               >
-                <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm mb-6" role="img" aria-label={`Portrait of ${member.name}, ${member.role}`}>
+                <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm mb-4" role="img" aria-label={`Portrait of ${member.name}, ${member.role}`}>
                   <div 
                     className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-105"
                     style={{ backgroundImage: `url(${member.image})` }}
                   />
-                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-ink/20 group-hover:bg-ink/0 transition-colors duration-500" />
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-1 group-hover:text-amber-500 transition-colors">{member.name}</h3>
-                <p className="text-slate-400 text-sm tracking-wide lowercase">{member.role}</p>
+                <h3 className="text-lg md:text-2xl font-serif text-alabaster mb-1 group-hover:text-amber-500 transition-colors">{member.name}</h3>
+                <p className="text-alabaster/60 text-xs md:text-sm tracking-wide lowercase">{member.role}</p>
               </motion.div>
             ))}
           </div>
